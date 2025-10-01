@@ -1,0 +1,38 @@
+const BASE_URL = import.meta.env.VITE_API_URL;
+
+const getProducts = async () => {
+  try {
+    const response = await fetch(`${BASE_URL}/products`);
+
+    if (!response.ok) {
+      throw new Error(`Error fetching products: ${response.status}`);
+    }
+
+    const data = await response.json();
+    return data;
+  } catch (error) {
+    console.error(error);
+    throw error;
+  }
+};
+
+const getProductById = async (id) => {
+  try {
+    const response = await fetch(`${BASE_URL}/products/${id}`);
+
+    if (!response.ok) {
+      throw new Error(`Error fetching product: ${response.status}`);
+    }
+
+    const data = await response.json();
+    return data;
+  } catch (error) {
+    console.error(error);
+    throw error;
+  }
+};
+
+export const productService = {
+  getProducts,
+  getProductById,
+};
