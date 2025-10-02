@@ -6,8 +6,18 @@ function NavigationBar() {
   return (
     <Navbar bg="black" variant="dark" expand="lg" sticky="top">
       <Container>
-        <Navbar.Brand as={Link} to="/">
-          Tech E-Commerce
+        <Navbar.Brand
+          as={Link}
+          to="/"
+          className="d-flex align-items-center justify-content-center gap-2"
+        >
+          <img
+            src="/shop-zone-icon.svg"
+            alt="Logo de ShopZone"
+            width="30"
+            height="30"
+          />
+          ShopZone
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="main-navbar" />
         <Navbar.Collapse id="main-navbar">
