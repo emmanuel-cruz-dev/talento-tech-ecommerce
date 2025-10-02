@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { Container, Row, Col, Button } from "react-bootstrap";
+import { Container, Button } from "react-bootstrap";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination, Autoplay } from "swiper/modules";
 import { useProducts } from "../../../hooks/useProducts";
@@ -18,13 +18,27 @@ function ProductSlideList() {
   if (loading) {
     return (
       <Container>
-        <Row className="g-3 align-items-center justify-content-center">
+        <Swiper
+          modules={[Navigation, Pagination, Autoplay]}
+          spaceBetween={20}
+          slidesPerView={1}
+          navigation
+          pagination={{ clickable: true }}
+          breakpoints={{
+            768: {
+              slidesPerView: 2,
+            },
+            992: {
+              slidesPerView: 3,
+            },
+          }}
+        >
           {Array.from({ length: 6 }).map((_, index) => (
-            <Col key={`placeholder-${index}`} xs={12} md={6} lg={4} xl={4}>
+            <SwiperSlide key={`placeholder-${index}`}>
               <ProductCard isLoading={true} />
-            </Col>
+            </SwiperSlide>
           ))}
-        </Row>
+        </Swiper>
       </Container>
     );
   }
