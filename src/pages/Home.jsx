@@ -1,6 +1,6 @@
 import React from "react";
 import Hero from "../components/ui/Hero";
-import ProductList from "../components/ui/product/ProductList";
+import ProductSlideList from "../components/ui/product/ProductSlideList";
 import Benefits from "../components/ui/Benefits";
 import Categories from "../components/ui/Categories";
 import Testimonials from "../components/ui/Testimonials";
@@ -11,7 +11,7 @@ function Home() {
     <>
       <Hero />
       <Benefits />
-      <ProductList />
+      <ProductSlideList />
       <Categories />
       <Testimonials />
       <Newsletter />
