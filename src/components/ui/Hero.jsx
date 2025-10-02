@@ -1,9 +1,13 @@
 import { Container, Row, Col, Button } from "react-bootstrap";
-import { Cart4 } from "react-bootstrap-icons";
+import { ShoppingCart } from "lucide-react";
 
 function Hero() {
   return (
-    <section className="bg-light text-dark py-5">
+    <section
+      className="bg-light text-dark"
+      id="hero"
+      style={{ paddingBlock: "5rem" }}
+    >
       <Container>
         <Row className="align-items-center">
           <Col md={6} className="mb-4 mb-md-0">
@@ -20,7 +24,7 @@ function Hero() {
               size="lg"
               className="mt-3 d-flex align-items-center gap-2"
             >
-              <Cart4 size={20} />
+              <ShoppingCart size={20} />
               Ver Productos
             </Button>
           </Col>
