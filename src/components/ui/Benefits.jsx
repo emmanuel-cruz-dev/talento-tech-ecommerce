@@ -1,35 +1,20 @@
-import { Container, Row, Col } from "react-bootstrap";
-import { CreditCard, Box, ShieldCheck } from "lucide-react";
+import { Container, Row } from "react-bootstrap";
+import { benefits } from "../../data/benefits";
+import BenefitCard from "./BenefitCard";
 
 function Benefits() {
   return (
     <section id="benefits" style={{ paddingBlock: "6rem" }}>
       <Container>
         <Row className="text-center">
-          <Col md={4} className="mb-4 mb-md-0">
-            <CreditCard size={40} className="text-primary mb-3" />
-            <h5 className="fw-bold">Elegí cómo pagar</h5>
-            <p className="text-muted">
-              Podés pagar con tarjeta, débito, efectivo o en cuotas sin tarjeta.
-            </p>
-          </Col>
-
-          <Col md={4} className="mb-4 mb-md-0">
-            <Box size={40} className="text-primary mb-3" />
-            <h5 className="fw-bold">Envío gratis desde $30.000</h5>
-            <p className="text-muted">
-              Registrate en ShopZone y obtené envíos gratis en miles de
-              productos.
-            </p>
-          </Col>
-
-          <Col md={4}>
-            <ShieldCheck size={40} className="text-primary mb-3" />
-            <h5 className="fw-bold">Seguridad, de principio a fin</h5>
-            <p className="text-muted">
-              ¿No te gusta? ¡Devolvelo! En ShopZone estás siempre protegido.
-            </p>
-          </Col>
+          {benefits.map((benefit, index) => (
+            <BenefitCard
+              key={index}
+              title={benefit.title}
+              description={benefit.description}
+              icon={benefit.icon}
+            />
+          ))}
         </Row>
       </Container>
     </section>
