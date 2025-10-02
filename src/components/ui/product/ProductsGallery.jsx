@@ -1,0 +1,50 @@
+import React from "react";
+import { Container, Row, Col } from "react-bootstrap";
+import { useProducts } from "../../../hooks/useProducts";
+import ProductCard from "./ProductCard";
+
+function ProductsGallery() {
+  const { products, loading, error } = useProducts();
+
+  if (error) return <p>Error al cargar los productos: {error}</p>;
+
+  if (loading) {
+    return (
+      <Container>
+        <Row className="g-3 align-items-center justify-content-center">
+          {Array.from({ length: 6 }).map((_, index) => (
+            <Col key={`placeholder-${index}`} xs={12} md={6} lg={4} xl={4}>
+              <ProductCard isLoading={true} />
+            </Col>
+          ))}
+        </Row>
+      </Container>
+    );
+  }
+
+  return (
+    <Container>
+      <header>
+        <h1 className="display-6 text-center fw-bold my-4">
+          Nuestros Productos
+        </h1>
+      </header>
+      <Row className="g-3 align-items-center justify-content-center">
+        {products.map((product) => (
+          <Col key={product.id} xs={12} md={6} lg={4} xl={4}>
+            <ProductCard
+              id={product.id}
+              title={product.title}
+              price={product.price}
+              description={product.description}
+              category={product.category}
+              image={product.image}
+            />
+          </Col>
+        ))}
+      </Row>
+    </Container>
+  );
+}
+
+export default ProductsGallery;
