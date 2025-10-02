@@ -46,7 +46,7 @@ function ProductSlideList() {
   return (
     <Container>
       <header>
-        <h1 className="display-6 text-center fw-bold my-5">
+        <h1 className="display-6 text-center fw-bold mb-5">
           Nuestros Productos
         </h1>
       </header>
@@ -72,7 +72,7 @@ function ProductSlideList() {
         }}
         style={{ paddingBottom: "3.5rem", paddingInline: "3rem" }}
       >
-        {products.slice(0, 7).map((product) => (
+        {products.slice(0, 6).map((product) => (
           <SwiperSlide key={product.id}>
             <ProductCard
               id={product.id}
