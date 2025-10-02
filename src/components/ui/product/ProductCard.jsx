@@ -8,14 +8,13 @@ function ProductCard({
   title,
   price,
   description,
-  category,
   image,
   isLoading = false,
 }) {
   if (isLoading) return <ProductCardPlaceholder />;
 
   return (
-    <Card style={{ width: "18rem" }}>
+    <Card>
       <Card.Img
         className="py-2"
         variant="top"
@@ -29,13 +28,18 @@ function ProductCard({
       />
       <Card.Body>
         <Card.Title className="line-clamp-1">{title}</Card.Title>
-        <Card.Text className="mb-1">
-          <strong>Precio:</strong> ${price}
+        <Card.Text
+          className="mb-1"
+          style={{ color: "blue", fontSize: "1.2rem", fontWeight: "500" }}
+        >
+          ${price}
         </Card.Text>
-        <Card.Text className="mb-1">
-          <strong>Categoría:</strong> {category}
+        <Card.Text
+          className="line-clamp-2 text-secondary"
+          style={{ textTransform: "capitalize" }}
+        >
+          {description}
         </Card.Text>
-        <Card.Text className="line-clamp-2">{description}</Card.Text>
         <Link to={`/product/${id}`} className="btn btn-primary">
           Ver más
         </Link>
