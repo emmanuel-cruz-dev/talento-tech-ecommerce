@@ -15,34 +15,6 @@ function ProductSlideList() {
 
   if (error) return <p>Error al cargar los productos: {error}</p>;
 
-  if (loading) {
-    return (
-      <Container>
-        <Swiper
-          modules={[Navigation, Pagination, Autoplay]}
-          spaceBetween={20}
-          slidesPerView={1}
-          navigation
-          pagination={{ clickable: true }}
-          breakpoints={{
-            768: {
-              slidesPerView: 2,
-            },
-            992: {
-              slidesPerView: 3,
-            },
-          }}
-        >
-          {Array.from({ length: 6 }).map((_, index) => (
-            <SwiperSlide key={`placeholder-${index}`}>
-              <ProductCard isLoading={true} />
-            </SwiperSlide>
-          ))}
-        </Swiper>
-      </Container>
-    );
-  }
-
   return (
     <Container>
       <header>
@@ -53,7 +25,7 @@ function ProductSlideList() {
 
       <Swiper
         modules={[Navigation, Pagination, Autoplay]}
-        spaceBetween={1}
+        spaceBetween={26}
         slidesPerView={1}
         navigation
         pagination={{ clickable: true }}
@@ -61,8 +33,11 @@ function ProductSlideList() {
           delay: 4000,
           disableOnInteraction: false,
         }}
-        loop={true}
+        loop={!loading && products.length > 3}
         breakpoints={{
+          640: {
+            slidesPerView: 2,
+          },
           768: {
             slidesPerView: 2,
           },
@@ -70,29 +45,35 @@ function ProductSlideList() {
             slidesPerView: 3,
           },
         }}
-        style={{ paddingBottom: "3.5rem", paddingInline: "3rem" }}
+        style={{ paddingBottom: "3.5rem" }}
       >
-        {products.slice(0, 6).map((product) => (
-          <SwiperSlide key={product.id}>
-            <ProductCard
-              id={product.id}
-              title={product.title}
-              price={product.price}
-              description={product.description}
-              category={product.category}
-              image={product.image}
-            />
-          </SwiperSlide>
-        ))}
+        {loading
+          ? Array.from({ length: 6 }).map((_, index) => (
+              <SwiperSlide key={`placeholder-${index}`}>
+                <ProductCard isLoading={true} />
+              </SwiperSlide>
+            ))
+          : products.slice(0, 6).map((product) => (
+              <SwiperSlide key={product.id}>
+                <ProductCard
+                  id={product.id}
+                  title={product.title}
+                  price={product.price}
+                  description={product.description}
+                  category={product.category}
+                  image={product.image}
+                />
+              </SwiperSlide>
+            ))}
       </Swiper>
 
-      <Container className="d-flex justify-content-center">
+      <footer className="d-flex justify-content-center">
         <Link to="/products">
           <Button variant="primary" className="mt-4 px-4">
             Ver más productos
           </Button>
         </Link>
-      </Container>
+      </footer>
     </Container>
   );
 }
