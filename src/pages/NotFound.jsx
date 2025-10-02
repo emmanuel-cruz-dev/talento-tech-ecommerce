@@ -1,7 +1,7 @@
 import React from "react";
 import { Container, Row, Col, Button } from "react-bootstrap";
 import { Link } from "react-router-dom";
-import { House, ArrowLeft } from "react-bootstrap-icons";
+import { House, ArrowLeft } from "lucide-react";
 import { useNavigation } from "../hooks/useNavigation";
 
 function NotFound() {
