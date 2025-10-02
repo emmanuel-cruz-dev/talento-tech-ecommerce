@@ -1,5 +1,5 @@
 import { Container, Row, Col } from "react-bootstrap";
-import { CreditCard, BoxSeam, ShieldCheck } from "react-bootstrap-icons";
+import { CreditCard, Box, ShieldCheck } from "lucide-react";
 
 function Benefits() {
   return (
@@ -15,7 +15,7 @@ function Benefits() {
           </Col>
 
           <Col md={4} className="mb-4 mb-md-0">
-            <BoxSeam size={40} className="text-primary mb-3" />
+            <Box size={40} className="text-primary mb-3" />
             <h5 className="fw-bold">Envío gratis desde $30.000</h5>
             <p className="text-muted">
               Registrate en ShopZone y obtené envíos gratis en miles de
