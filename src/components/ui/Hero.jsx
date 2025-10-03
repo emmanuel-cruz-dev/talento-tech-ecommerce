@@ -1,5 +1,4 @@
 import { Container, Row, Col, Button } from "react-bootstrap";
-import { ShoppingCart } from "lucide-react";
 
 function Hero() {
   return (
@@ -19,14 +18,15 @@ function Hero() {
               precio. Encuentra moda, tecnología, accesorios y mucho más en un
               solo lugar.
             </p>
-            <Button
-              variant="primary"
-              size="lg"
-              className="mt-3 d-flex align-items-center gap-2"
-            >
-              <ShoppingCart size={20} />
-              Ver Productos
-            </Button>
+            <a href="#product-slide-list" className="text-decoration-none">
+              <Button
+                variant="primary"
+                size="lg"
+                className="mt-3 d-inline-flex align-items-center gap-2 px-5"
+              >
+                Ver Productos
+              </Button>
+            </a>
           </Col>
 
           <Col md={6} className="text-center">
