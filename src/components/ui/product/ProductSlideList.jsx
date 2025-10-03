@@ -10,7 +10,7 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 
-function ProductSlideList() {
+function ProductSlideList({ title }) {
   const { products, loading, error } = useProducts();
 
   if (error) return <p>Error al cargar los productos: {error}</p>;
@@ -22,9 +22,7 @@ function ProductSlideList() {
       style={{ scrollMarginTop: "3.5rem" }}
     >
       <header>
-        <h1 className="display-6 text-center fw-bold mb-5">
-          Nuestros Productos
-        </h1>
+        <h2 className="display-6 text-center fw-bold mb-5">{title}</h2>
       </header>
 
       <Swiper
