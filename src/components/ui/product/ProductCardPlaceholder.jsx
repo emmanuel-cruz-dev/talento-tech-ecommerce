@@ -3,7 +3,7 @@ import { Card, Placeholder } from "react-bootstrap";
 
 function ProductCardPlaceholder() {
   return (
-    <Card style={{ width: "18rem" }}>
+    <Card>
       <Placeholder
         as="div"
         animation="glow"
