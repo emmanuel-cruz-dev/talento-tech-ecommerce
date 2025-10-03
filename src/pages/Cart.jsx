@@ -1,49 +1,61 @@
-import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import React from "react";
 import { Container, Row, Col, Card, Button } from "react-bootstrap";
+import { Trash2 } from "lucide-react";
+import { useCart } from "../context/CartContext";
+import OrderSummary from "../components/ui/cart/OrderSummary";
+import EmptyCartCard from "../components/ui/cart/EmptyCartCard";
+import CartItem from "../components/ui/cart/CartItem";
 
 function Cart() {
-  const [products, setProducts] = useState([]);
-  const navigate = useNavigate();
-
-  const handleRemoveProduct = (id) => {
-    const newProducts = products.filter((product) => product.id !== id);
-    setProducts(newProducts);
-  };
-
-  const handleCheckout = () => {
-    navigate("/checkout");
-  };
+  const {
+    cart,
+    handleAddToCart,
+    handleDecreaseQuantity,
+    getCartTotal,
+    getCartItemsCount,
+    handleRemoveFromCart,
+    handleClearCart,
+  } = useCart();
 
   return (
-    <Container>
-      <Row>
-        <Col>
-          <Card>
-            <Card.Header>Carrito</Card.Header>
-            <Card.Body>
-              <Card.Title>Productos en el carrito</Card.Title>
-              <ul>
-                {products.map((product) => (
-                  <li key={product.id}>
-                    {product.name} - {product.price}
-                    <Button
-                      variant="outline-danger"
-                      onClick={() => handleRemoveProduct(product.id)}
-                    >
-                      Eliminar
-                    </Button>
-                  </li>
+    <Container className="py-5">
+      <header className="mb-4">
+        <h1 className="display-5 fw-bold mb-2">Mi Carrito</h1>
+        <p className="text-muted">
+          {cart.length > 0 &&
+            `Tienes ${getCartItemsCount()} ${
+              getCartItemsCount() === 1 ? "producto" : "productos"
+            } en tu carrito`}
+        </p>
+      </header>
+
+      <Row className="g-4" style={{ position: "relative" }}>
+        <Col lg={8}>
+          {cart.length > 0 ? (
+            <Card className="shadow-sm border-0">
+              <Card.Body className="p-0">
+                {cart.map((product, index) => (
+                  <CartItem key={product.id} product={product} index={index} />
                 ))}
-              </ul>
-              <Card.Footer>
-                <Button variant="primary" onClick={handleCheckout}>
-                  Finalizar pedido
+              </Card.Body>
+
+              <Card.Footer className="bg-white border-top py-4">
+                <Button
+                  variant="outline-danger d-inline-flex align-items-center gap-2 px-3"
+                  size="sm"
+                  onClick={handleClearCart}
+                >
+                  <Trash2 size={16} />
+                  Vaciar carrito
                 </Button>
               </Card.Footer>
-            </Card.Body>
-          </Card>
+            </Card>
+          ) : (
+            <EmptyCartCard />
+          )}
         </Col>
+
+        <OrderSummary />
       </Row>
     </Container>
   );
