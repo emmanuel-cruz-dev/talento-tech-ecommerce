@@ -1,6 +1,6 @@
 import React from "react";
 import { Row, Col, Button, Badge } from "react-bootstrap";
-import { Minus, Plus, Trash2 } from "lucide-react";
+import { Minus, Plus, Trash2, ShoppingBag } from "lucide-react";
 import { useCart } from "../../../context/CartContext";
 
 const CartItem = ({ product, index }) => {
