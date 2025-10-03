@@ -25,7 +25,7 @@ const ProductDetailsCard = ({ product }) => {
             <Card.Body>
               <figure
                 className="bg-light rounded d-flex align-items-center justify-content-center"
-                style={{ height: "400px", overflow: "hidden" }}
+                style={{ height: "320px", overflow: "hidden" }}
               >
                 <img
                   src={product.image}
