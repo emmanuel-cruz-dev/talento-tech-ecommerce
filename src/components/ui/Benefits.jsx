@@ -4,7 +4,11 @@ import BenefitCard from "./BenefitCard";
 
 function Benefits() {
   return (
-    <section id="benefits" style={{ paddingBlock: "6rem" }}>
+    <section
+      id="benefits"
+      style={{ paddingBlock: "6rem" }}
+      className="bg-white"
+    >
       <Container>
         <Row className="text-center">
           {benefits.map((benefit, index) => (
