@@ -1,0 +1,55 @@
+import React from "react";
+import { Link } from "react-router-dom";
+import { Container, Card, Row, Col } from "react-bootstrap";
+import { ArrowLeft } from "lucide-react";
+import HighlightedFeatures from "../HighlightedFeatures";
+import { features } from "../../../data/features";
+import ProductInfoCard from "./ProductInfoCard";
+
+const ProductDetailsCard = ({ product }) => {
+  return (
+    <Container className="py-5">
+      <header className="mb-4">
+        <Link
+          to="/products"
+          className="text-decoration-none text-muted d-flex align-items-center gap-2"
+        >
+          <ArrowLeft size={20} />
+          Ir a la tienda
+        </Link>
+      </header>
+
+      <Row className="g-4">
+        <Col lg={6}>
+          <Card className="shadow-sm border-0 mb-3">
+            <Card.Body>
+              <figure
+                className="bg-light rounded d-flex align-items-center justify-content-center"
+                style={{ height: "400px", overflow: "hidden" }}
+              >
+                <img
+                  src={product.image}
+                  alt={product.name}
+                  className="img-fluid rounded"
+                  style={{
+                    height: "100%",
+                    objectFit: "contain",
+                    padding: "1.75rem 1rem",
+                  }}
+                />
+              </figure>
+            </Card.Body>
+          </Card>
+
+          <HighlightedFeatures features={features} />
+        </Col>
+
+        <Col lg={6}>
+          <ProductInfoCard product={product} />
+        </Col>
+      </Row>
+    </Container>
+  );
+};
+
+export default ProductDetailsCard;
