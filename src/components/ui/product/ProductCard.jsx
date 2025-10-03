@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { Card, Button } from "react-bootstrap";
 import ProductCardPlaceholder from "./ProductCardPlaceholder";
 import { useProductCard } from "../../../hooks/useProductCard";
+import { capitalizeFirstLetter } from "../../../utils/utils";
 
 function ProductCard({
   id,
@@ -47,11 +48,8 @@ function ProductCard({
         >
           ${price}
         </Card.Text>
-        <Card.Text
-          className="line-clamp-2 text-secondary"
-          style={{ textTransform: "capitalize" }}
-        >
-          {description}
+        <Card.Text className="line-clamp-2 text-secondary">
+          {capitalizeFirstLetter(description)}
         </Card.Text>
         <Button
           variant="primary"
