@@ -1,8 +1,11 @@
 import React from "react";
 import { Navbar, Nav, Container } from "react-bootstrap";
 import { Link } from "react-router-dom";
+import { useCart } from "../context/CartContext";
 
 function NavigationBar() {
+  const { getCartItemsCount } = useCart();
+
   return (
     <Navbar bg="black" variant="dark" expand="lg" sticky="top">
       <Container>
@@ -29,7 +32,7 @@ function NavigationBar() {
               Productos
             </Nav.Link>
             <Nav.Link as={Link} to="/cart">
-              Carrito
+              Carrito {getCartItemsCount() > 0 && `(${getCartItemsCount()})`}
             </Nav.Link>
           </Nav>
         </Navbar.Collapse>
