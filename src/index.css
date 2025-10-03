@@ -29,8 +29,8 @@
 
 .swiper-button-next,
 .swiper-button-prev {
-  width: 2rem !important;
-  height: 2rem !important;
+  width: 1.75rem !important;
+  height: 1.75rem !important;
   transition: transform 0.3s ease-in-out;
 }
 
