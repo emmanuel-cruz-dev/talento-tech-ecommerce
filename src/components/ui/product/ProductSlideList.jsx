@@ -16,7 +16,7 @@ function ProductSlideList() {
   if (error) return <p>Error al cargar los productos: {error}</p>;
 
   return (
-    <Container>
+    <Container className="py-5">
       <header>
         <h1 className="display-6 text-center fw-bold mb-5">
           Nuestros Productos
