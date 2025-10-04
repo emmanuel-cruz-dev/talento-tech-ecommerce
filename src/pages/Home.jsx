@@ -11,7 +11,7 @@ function Home() {
     <>
       <Hero />
       <Benefits />
-      <ProductSlideList />
+      <ProductSlideList title="Nuestros Productos" />
       <Categories />
       <Testimonials />
       <Newsletter />
