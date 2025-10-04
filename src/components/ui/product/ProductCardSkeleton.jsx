@@ -1,7 +1,7 @@
 import React from "react";
 import { Card, Placeholder } from "react-bootstrap";
 
-function ProductCardPlaceholder() {
+function ProductCardSkeleton() {
   return (
     <Card>
       <Placeholder
@@ -23,4 +23,4 @@ function ProductCardPlaceholder() {
   );
 }
 
-export default ProductCardPlaceholder;
+export default ProductCardSkeleton;
