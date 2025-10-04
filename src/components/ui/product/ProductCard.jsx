@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { Card, Button } from "react-bootstrap";
-import ProductCardPlaceholder from "./ProductCardPlaceholder";
+import ProductCardSkeleton from "./ProductCardSkeleton";
 import { useProductCard } from "../../../hooks/useProductCard";
 import { capitalizeFirstLetter } from "../../../utils/utils";
 
@@ -21,7 +21,7 @@ function ProductCard({
     image,
   });
 
-  if (isLoading) return <ProductCardPlaceholder />;
+  if (isLoading) return <ProductCardSkeleton />;
 
   return (
     <Card>
