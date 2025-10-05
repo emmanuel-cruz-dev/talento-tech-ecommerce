@@ -5,8 +5,11 @@ import { ArrowLeft } from "lucide-react";
 import HighlightedFeatures from "../HighlightedFeatures";
 import { features } from "../../../data/features";
 import ProductInfoCard from "./ProductInfoCard";
+import ProductDetailsCardSkeleton from "./ProductDetailsCardSkeleton";
 
-const ProductDetailsCard = ({ product }) => {
+const ProductDetailsCard = ({ product, isLoading = false }) => {
+  if (isLoading) return <ProductDetailsCardSkeleton />;
+
   return (
     <Container className="py-5">
       <header className="mb-4">
