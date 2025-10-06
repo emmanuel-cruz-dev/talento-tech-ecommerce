@@ -5,11 +5,12 @@ import { ArrowLeft } from "lucide-react";
 import { useCart } from "../../../context/CartContext";
 
 const OrderSummary = () => {
-  const { cart, getCartTotal } = useCart();
+  const { cart, getCartTotal, handleClearCart } = useCart();
 
   const handleCheckout = () => {
-    // TODO: Realizar el checkout
-    console.log("Procesando checkout...");
+    // TODO: Realizar el checkout y redireccionar al carrito
+    handleClearCart();
+    alert("Gracias por su compra!");
   };
 
   return (
