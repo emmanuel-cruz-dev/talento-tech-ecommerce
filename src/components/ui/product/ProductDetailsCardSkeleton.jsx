@@ -11,7 +11,7 @@ function ProductDetailsCardSkeleton() {
       <header className="mb-4">
         <Link
           to="/products"
-          className="text-decoration-none text-muted d-flex align-items-center gap-2"
+          className="text-decoration-none text-muted d-inline-flex align-items-center gap-2"
         >
           <ArrowLeft size={20} />
           Ir a la tienda
@@ -44,7 +44,7 @@ function ProductDetailsCardSkeleton() {
 
         <Col lg={6}>
           <Card className="shadow-sm border-0 h-100">
-            <Card.Body>
+            <Card.Body className="d-flex flex-column">
               <Placeholder animation="glow" className="mb-3">
                 <Placeholder
                   xs={3}
@@ -61,21 +61,21 @@ function ProductDetailsCardSkeleton() {
                 <Placeholder xs={4} style={{ height: "24px" }} />
               </Placeholder>
 
-              <Placeholder animation="glow" className="mb-4">
+              <Placeholder animation="glow" className="mb-3">
                 <Placeholder xs={5} size="lg" style={{ height: "48px" }} />
               </Placeholder>
 
-              <Placeholder animation="glow" className="mb-4">
-                <Placeholder xs={12} />
-                <Placeholder xs={11} />
-                <Placeholder xs={10} />
-                <Placeholder xs={9} />
+              <Placeholder animation="glow" className="mb-3">
+                <Placeholder xs={12} className="mb-2" />
+                <Placeholder xs={11} className="mb-2" />
+                <Placeholder xs={10} className="mb-2" />
+                <Placeholder xs={9} className="mb-2" />
               </Placeholder>
 
-              <Placeholder animation="glow" className="mb-4">
+              <Placeholder animation="glow" className="mb-3">
                 <Placeholder
                   xs={4}
-                  className="rounded-pill"
+                  className="rounded-pill mb-2"
                   style={{ height: "40px" }}
                 />
               </Placeholder>
