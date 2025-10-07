@@ -38,3 +38,23 @@
 .swiper-button-prev:hover {
   transform: scale(1.1);
 }
+
+.cart__items-container {
+  position: relative;
+}
+
+.cart__items-badge {
+  position: absolute;
+  top: 0;
+  right: -4px;
+  width: 1.5rem;
+  height: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.75rem;
+  background-color: var(--bs-primary);
+  color: var(--bs-white);
+  border-radius: 5rem;
+  z-index: 1;
+}
