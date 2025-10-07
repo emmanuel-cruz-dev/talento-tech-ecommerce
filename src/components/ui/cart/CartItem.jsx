@@ -36,7 +36,10 @@ const CartItem = ({ product, index }) => {
         </Col>
 
         <Col xs={12} sm={4}>
-          <h6 className="mb-1 line-clamp-2">{product.title}</h6>
+          <h6 className="mb-1 line-clamp-1">{product.title}</h6>
+          <p className="mb-0 small fw-semibold">
+            Precio unitario: ${product.price}
+          </p>
           <p
             className="text-muted mb-0 small line-clamp-2"
             style={{ textTransform: "capitalize" }}
@@ -73,7 +76,7 @@ const CartItem = ({ product, index }) => {
 
         <Col xs={6} sm={2} className="text-end">
           <div className="fw-bold fs-5 mb-2">
-            ${(product.price * product.quantity).toFixed(2)}
+            Subtotal: ${(product.price * product.quantity).toFixed(2)}
           </div>
           <Button
             variant="link"
