@@ -53,7 +53,7 @@ function ProductCard({
         </Card.Text>
         <Button
           variant="primary"
-          className="mt-3 d-inline-flex align-items-center gap-2 px-4"
+          className="mt-3 d-inline-flex justify-content-center gap-2 px-4 w-100"
           onClick={handleAddToCartClick}
         >
           Añadir al carrito
