@@ -4,8 +4,11 @@ import { Container, Card, Row, Col, Placeholder } from "react-bootstrap";
 import { ArrowLeft } from "lucide-react";
 import HighlightedFeatures from "../HighlightedFeatures";
 import { features } from "../../../data/features";
+import { useAuth } from "../../../context/AuthContext";
 
 function ProductDetailsCardSkeleton() {
+  const { isAuthenticated } = useAuth();
+
   return (
     <Container className="py-5">
       <header className="mb-4">
@@ -80,20 +83,29 @@ function ProductDetailsCardSkeleton() {
                 />
               </Placeholder>
 
-              <div className="d-flex gap-2">
+              {isAuthenticated ? (
+                <div className="d-flex gap-2">
+                  <Placeholder.Button
+                    variant="primary"
+                    xs={9}
+                    style={{ height: "48px" }}
+                    animation="glow"
+                  />
+                  <Placeholder.Button
+                    variant="outline-secondary"
+                    xs={3}
+                    style={{ height: "48px" }}
+                    animation="glow"
+                  />
+                </div>
+              ) : (
                 <Placeholder.Button
                   variant="primary"
-                  xs={9}
+                  xs={12}
                   style={{ height: "48px" }}
                   animation="glow"
                 />
-                <Placeholder.Button
-                  variant="outline-secondary"
-                  xs={3}
-                  style={{ height: "48px" }}
-                  animation="glow"
-                />
-              </div>
+              )}
             </Card.Body>
           </Card>
         </Col>
