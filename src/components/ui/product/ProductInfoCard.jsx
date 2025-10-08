@@ -3,8 +3,10 @@ import { Card, Row, Col, Button, Badge } from "react-bootstrap";
 import { Star, ShoppingCart, Heart } from "lucide-react";
 import { capitalizeFirstLetter } from "../../../utils/utils";
 import { useProductCard } from "../../../hooks/useProductCard";
+import { useAuth } from "../../../context/AuthContext";
 
 const ProductInfoCard = ({ product }) => {
+  const { isAuthenticated } = useAuth();
   const { handleAddToCartClick } = useProductCard({
     id: product.id,
     title: product.title,
@@ -55,23 +57,29 @@ const ProductInfoCard = ({ product }) => {
           )}
         </div>
 
-        <Row className="g-3 mb-3">
-          <Col xs={12} md={8}>
-            <Button
-              variant="primary"
-              className="w-100 py-2"
-              onClick={handleAddToCartClick}
-            >
-              <ShoppingCart size={20} className="me-2" />
-              Agregar al carrito
-            </Button>
-          </Col>
-          <Col xs={12} md={4}>
-            <Button variant="outline-secondary" className="w-100 py-2">
-              <Heart size={20} />
-            </Button>
-          </Col>
-        </Row>
+        {isAuthenticated ? (
+          <Row className="g-3 mb-3">
+            <Col xs={12} md={8}>
+              <Button
+                variant="primary"
+                className="w-100 py-2"
+                onClick={handleAddToCartClick}
+              >
+                <ShoppingCart size={20} className="me-2" />
+                Agregar al carrito
+              </Button>
+            </Col>
+            <Col xs={12} md={4}>
+              <Button variant="outline-secondary" className="w-100 py-2">
+                <Heart size={20} />
+              </Button>
+            </Col>
+          </Row>
+        ) : (
+          <Button variant="primary" className="w-100 py-2">
+            Inicia sesión para añadir al carrito
+          </Button>
+        )}
       </Card.Body>
     </Card>
   );
