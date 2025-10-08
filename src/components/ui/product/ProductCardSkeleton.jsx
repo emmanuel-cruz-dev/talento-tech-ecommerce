@@ -17,7 +17,7 @@ function ProductCardSkeleton() {
           <Placeholder xs={7} /> <Placeholder xs={4} /> <Placeholder xs={4} />{" "}
           <Placeholder xs={6} /> <Placeholder xs={8} />
         </Placeholder>
-        <Placeholder.Button variant="primary" xs={6} animation="glow" />
+        <Placeholder.Button variant="primary" xs={12} animation="glow" />
       </Card.Body>
     </Card>
   );
