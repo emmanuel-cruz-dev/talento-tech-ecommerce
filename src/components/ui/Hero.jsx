@@ -1,11 +1,12 @@
 import { Container, Row, Col, Button } from "react-bootstrap";
+import HeroBanner from "../../assets/products-banner.avif";
 
 function Hero() {
   return (
     <section
       className="bg-light text-dark"
       id="hero"
-      style={{ paddingBlock: "5rem" }}
+      style={{ paddingBlock: "1.25rem" }}
     >
       <Container>
         <Row className="align-items-center">
@@ -31,10 +32,13 @@ function Hero() {
 
           <Col md={6} className="text-center">
             <img
-              src="https://cdn-icons-png.flaticon.com/512/3081/3081559.png"
+              src={HeroBanner}
               alt="Hero ShopZone"
               className="img-fluid"
-              style={{ maxHeight: "300px" }}
+              style={{
+                maxHeight: "460px",
+                filter: "drop-shadow(5px 5px 10px rgba(0, 0, 0, 0.5))",
+              }}
             />
           </Col>
         </Row>
