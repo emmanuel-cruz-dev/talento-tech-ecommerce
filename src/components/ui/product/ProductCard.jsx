@@ -4,6 +4,7 @@ import { Card, Button } from "react-bootstrap";
 import ProductCardSkeleton from "./ProductCardSkeleton";
 import { useProductCard } from "../../../hooks/useProductCard";
 import { capitalizeFirstLetter } from "../../../utils/utils";
+import { useAuth } from "../../../context/AuthContext";
 
 function ProductCard({
   id,
@@ -13,6 +14,7 @@ function ProductCard({
   image,
   isLoading = false,
 }) {
+  const { isAuthenticated } = useAuth();
   const { handleAddToCartClick } = useProductCard({
     id,
     title,
@@ -51,13 +53,22 @@ function ProductCard({
         <Card.Text className="line-clamp-2 text-secondary">
           {capitalizeFirstLetter(description)}
         </Card.Text>
-        <Button
-          variant="primary"
-          className="mt-3 d-inline-flex justify-content-center gap-2 px-4 w-100"
-          onClick={handleAddToCartClick}
-        >
-          Añadir al carrito
-        </Button>
+        {isAuthenticated ? (
+          <Button
+            variant="primary"
+            className="mt-3 d-inline-flex justify-content-center gap-2 px-4 w-100"
+            onClick={handleAddToCartClick}
+          >
+            Añadir al carrito
+          </Button>
+        ) : (
+          <Button
+            variant="primary"
+            className="mt-3 d-inline-flex justify-content-center gap-2 px-4 w-100"
+          >
+            Inicia sesión para comprar
+          </Button>
+        )}
       </Card.Body>
     </Card>
   );
