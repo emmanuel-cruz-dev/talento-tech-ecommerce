@@ -2,6 +2,7 @@ import React from "react";
 import { Navbar, Nav, Container } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { useCart } from "../context/CartContext";
+import { ShoppingCart } from "lucide-react";
 
 function NavigationBar() {
   const { getCartItemsCount } = useCart();
@@ -31,8 +32,11 @@ function NavigationBar() {
             <Nav.Link as={Link} to="/products">
               Productos
             </Nav.Link>
-            <Nav.Link as={Link} to="/cart">
-              Carrito {getCartItemsCount() > 0 && `(${getCartItemsCount()})`}
+            <Nav.Link as={Link} to="/cart" className="cart__items-container">
+              <ShoppingCart size={20} className="me-2" />
+              {getCartItemsCount() > 0 && (
+                <span className="cart__items-badge">{getCartItemsCount()}</span>
+              )}
             </Nav.Link>
           </Nav>
         </Navbar.Collapse>
