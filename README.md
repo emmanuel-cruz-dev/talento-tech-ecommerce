@@ -1,16 +1,58 @@
-# React + Vite
+# ShopZone
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+ShopZone es un e-commerce desarrollado como proyecto final para el curso de React + Bootstrap. Permite explorar productos, agregarlos a un carrito, gestionar compras y navegar entre distintas secciones de manera segura y moderna.
 
-Currently, two official plugins are available:
+## Tecnologías utilizadas
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **React**: Framework de JavaScript para construir interfaces de usuario.
+- **Bootstrap**: Framework de CSS para construir interfaces de usuario.
+- **React Router**: Gestión de rutas y navegación.
+- **React Hooks**: Utilidades para crear componentes reutilizables.
+- **Context API**: Utilidad para compartir datos entre componentes.
+- **Lucide-React**: Iconos y iconos de funcionalidad.
+- **Swiper**: Librería para la creación de carrusels.
 
-## React Compiler
+## Características principales
 
-The React Compiler is not enabled on this template. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- **Listado de productos:** Visualiza productos destacados y por categorías.
+- **Carrito de compras:** Agrega, elimina, suma/resta cantidad y vacía productos. El estado se mantiene globalmente.
+- **Integración con API:** Los productos se obtienen dinámicamente desde una API externa.
+- **Autenticación y rutas protegidas:** Acceso seguro a secciones como el carrito y el perfil de usuario.
+- **Rutas dinámicas:** Detalles de producto accesibles mediante rutas con parámetros.
+- **Diseño responsivo:** Interfaz moderna y adaptable, construida con React y Bootstrap.
+- **Manejo de estados de carga y error:** Skeletons y mensajes claros para mejorar la experiencia de usuario.
+- **Navegación intuitiva:** Navbar con enlaces a todas las secciones y estado de autenticación visible.
 
-## Expanding the ESLint configuration
+## Estructura del proyecto
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- `src/components/ui/`: Componentes reutilizables de UI (productos, carrito, testimonios, etc).
+- `src/pages/`: Páginas principales (Home, Products, Product, Cart, Profile, Login, NotFound).
+- `src/context/`: Contextos globales para autenticación y carrito.
+- `src/services/`: Servicios para conexión con la API.
+- `src/routes/`: Definición de rutas y rutas protegidas.
+- `src/hooks/`: Hooks personalizados para lógica de negocio.
+
+## Instalación y uso
+
+1. Clona el repositorio.
+2. Instala dependencias:
+   ```powershell
+   npm install
+   ```
+3. Configura la variable de entorno `VITE_API_URL` en un archivo `.env`.
+4. Inicia el proyecto:
+   ```powershell
+   npm run dev
+   ```
+
+## Requerimientos cumplidos
+
+- [x] Carrito de compras funcional con React y Bootstrap.
+- [x] Integración y consumo de API externa.
+- [x] Manejo de estado, carga y errores.
+- [x] Rutas dinámicas y protegidas.
+- [x] Layout y navegación moderna y responsiva.
+
+---
+
+Desarrollado por Emmanuel Cruz para Talento Tech.
