@@ -50,3 +50,28 @@ export const useProductById = (id) => {
 
   return { product, loading, error };
 };
+
+export const useProductsByCategory = (category) => {
+  const [products, setProducts] = useState([]);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(null);
+
+  useEffect(() => {
+    const fetchProducts = async () => {
+      try {
+        setLoading(true);
+        setError(null);
+        const data = await productService.getProductsByCategory(category);
+        setProducts(data);
+      } catch (err) {
+        setError(err.message || "Error al cargar los productos");
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchProducts();
+  }, [category]);
+
+  return { products, loading, error };
+};
