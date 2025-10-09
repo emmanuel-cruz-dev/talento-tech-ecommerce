@@ -1,17 +1,57 @@
 import React from "react";
+import { Container, Row, Col, ListGroup } from "react-bootstrap";
 import ProductsGallery from "../components/ui/product/ProductsGallery";
+import { useProductsByCategory } from "../hooks/useProducts";
+import { CATEGORIES } from "../constants/categories";
+import { useCategorySelect } from "../hooks/useCategorySelect";
 
 function Products() {
-  return (
-    <section className="d-flex flex-column flex-sm-row gap-3 justify-content-center mb-5">
-      <aside className="pt-4 px-4 bg-white">
-        <h2>Categorías</h2>
-        {/* TODO: Agregar filtros por categoría */}
-        {/* TODO: Ordenar por precio */}
-      </aside>
+  const { selectedCategory, handleCategorySelect } = useCategorySelect("all");
+  const { products, loading, error } = useProductsByCategory(selectedCategory);
 
-      <ProductsGallery />
-    </section>
+  return (
+    <Container fluid className="mb-4">
+      <Row>
+        <Col
+          md={3}
+          lg={2}
+          className="mb-4 mb-md-0 py-4"
+          style={{ background: "#eee" }}
+        >
+          <div className="sticky-top" style={{ top: "68px", zIndex: 1 }}>
+            <h5 className="mb-3" style={{ fontSize: "1.5rem" }}>
+              Categorías
+            </h5>
+            <ListGroup>
+              {CATEGORIES.map((category) => (
+                <ListGroup.Item
+                  key={category.id}
+                  action
+                  active={selectedCategory === category.id}
+                  onClick={handleCategorySelect(category.id)}
+                  className="border-0 rounded mb-2"
+                  style={{ cursor: "pointer" }}
+                >
+                  {category.name}
+                </ListGroup.Item>
+              ))}
+            </ListGroup>
+          </div>
+        </Col>
+
+        <Col md={9} lg={10}>
+          <ProductsGallery
+            title={
+              CATEGORIES.find((category) => category.id === selectedCategory)
+                ?.name
+            }
+            products={products}
+            loading={loading}
+            error={error}
+          />
+        </Col>
+      </Row>
+    </Container>
   );
 }
 
