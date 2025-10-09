@@ -14,7 +14,7 @@ function Hero() {
             <h1 className="display-4 fw-bold">
               Bienvenido a <span className="text-primary">ShopZone</span>
             </h1>
-            <p className="lead text-secondary mt-3">
+            <p className="lead text-muted mt-3">
               Tu tienda online para descubrir los mejores productos al mejor
               precio. Encuentra moda, tecnología, accesorios y mucho más en un
               solo lugar.
