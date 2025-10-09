@@ -5,7 +5,7 @@ const BenefitCard = ({ title, description, icon: Icon }) => {
   return (
     <Col md={4} className="mb-4 mb-md-0">
       <Icon size={40} className="text-primary mb-3" />
-      <h5 className="fw-bold">{title}</h5>
+      <h2 className="fw-bold">{title}</h2>
       <p className="text-muted">{description}</p>
     </Col>
   );
