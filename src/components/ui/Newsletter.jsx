@@ -18,8 +18,11 @@ function Newsletter() {
           <Col md={6}>
             <Form className="d-flex">
               <Form.Control
+                id="email"
+                name="email"
                 type="email"
                 placeholder="Ingresá tu email"
+                autoComplete="off"
                 className="me-2"
               />
               <Button variant="primary">Suscribirme</Button>
