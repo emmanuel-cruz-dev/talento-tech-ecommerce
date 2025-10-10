@@ -23,6 +23,9 @@ ShopZone es un e-commerce desarrollado como proyecto final para el curso de Reac
 
 ## Características principales
 
+- **Login personalizado:** El usuario puede iniciar sesión ingresando su nombre, que se guarda y persiste en el navegador.
+- **Perfil de usuario:** El nombre del usuario se muestra en la sección de perfil y en el carrito, personalizando la experiencia.
+- **Logout:** El usuario puede cerrar sesión, eliminando su información del navegador.
 - **Listado de productos:** Visualiza productos destacados y por categorías.
 - **Carrito de compras:** Agrega, elimina, suma/resta cantidad y vacía productos. El estado se mantiene globalmente.
 - **Integración con API:** Los productos se obtienen dinámicamente desde una API externa.
@@ -49,7 +52,7 @@ ShopZone es un e-commerce desarrollado como proyecto final para el curso de Reac
    npm install
    ```
 3. Configura la variable de entorno `VITE_API_URL` en un archivo `.env`. Puedes usar el archivo `.env.example` como referencia:
-   ```bash
+   ```powershell
    cp .env.example .env
    ```
 4. Inicia el proyecto:
@@ -59,6 +62,7 @@ ShopZone es un e-commerce desarrollado como proyecto final para el curso de Reac
 
 ## Requerimientos cumplidos
 
+- [x] Login personalizado y persistente con nombre de usuario.
 - [x] Carrito de compras funcional con React y Bootstrap.
 - [x] Integración y consumo de API externa.
 - [x] Manejo de estado, carga y errores.
@@ -70,3 +74,7 @@ ShopZone es un e-commerce desarrollado como proyecto final para el curso de Reac
 ## 🌐 API Utilizada
 
 Este proyecto utiliza [FakeStore-API](https://fakestoreapi.com/) para obtener datos de productos.
+
+---
+
+Desarrollado por Emmanuel Cruz para Talento Tech.
