@@ -2,25 +2,28 @@ import React from "react";
 import { Container, Row, Col, Card, Button } from "react-bootstrap";
 import { Trash2 } from "lucide-react";
 import { useCart } from "../context/CartContext";
+import { useAuth } from "../context/AuthContext";
 import OrderSummary from "../components/ui/cart/OrderSummary";
 import EmptyCartCard from "../components/ui/cart/EmptyCartCard";
 import CartItem from "../components/ui/cart/CartItem";
 
 function Cart() {
-  const {
-    cart,
-    handleAddToCart,
-    handleDecreaseQuantity,
-    getCartTotal,
-    getCartItemsCount,
-    handleRemoveFromCart,
-    handleClearCart,
-  } = useCart();
+  const { cart, getCartItemsCount, handleClearCart } = useCart();
+  const { user } = useAuth();
 
   return (
     <Container className="py-5">
       <header className="mb-4">
-        <h1 className="display-5 fw-bold mb-2">Mi Carrito</h1>
+        <h1 className="display-5 fw-bold mb-2">
+          {user ? (
+            <>
+              Carrito de{" "}
+              <span style={{ textTransform: "capitalize" }}>{user}</span>
+            </>
+          ) : (
+            "Mi carrito"
+          )}
+        </h1>
         <p className="text-muted">
           {cart.length > 0 &&
             `Tienes ${getCartItemsCount()} ${
