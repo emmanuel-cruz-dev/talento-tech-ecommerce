@@ -1,6 +1,6 @@
 import { Routes, Route } from "react-router-dom";
 import { Suspense, lazy } from "react";
-import { Loader } from "lucide-react";
+import Loader from "../components/ui/Loader.jsx";
 
 const Home = lazy(() => import("../pages/Home.jsx"));
 const Product = lazy(() => import("../pages/Product.jsx"));
