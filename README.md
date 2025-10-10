@@ -14,7 +14,7 @@ ShopZone es un e-commerce desarrollado como proyecto final para el curso de Reac
 - **React Router**: Gestión de rutas y navegación.
 - **React Hooks**: Utilidades para crear componentes reutilizables.
 - **Context API**: Utilidad para compartir datos entre componentes.
-- **Lucide-React**: Iconos y iconos de funcionalidad.
+- **Lucide-React**: Iconos vectoriales y colores.
 - **Swiper**: Librería para la creación de carrusels.
 
 ## Características principales
