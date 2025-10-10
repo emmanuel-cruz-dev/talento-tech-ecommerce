@@ -27,17 +27,22 @@ const ProductDetailsCard = ({ product, isLoading = false }) => {
           <Card className="shadow-sm border-0 mb-3">
             <Card.Body>
               <figure
-                className="bg-light rounded d-flex align-items-center justify-content-center"
-                style={{ height: "320px", overflow: "hidden" }}
+                className="rounded d-flex align-items-center justify-content-center m-0"
+                style={{
+                  height: "320px",
+                  overflow: "hidden",
+                  background: "linear-gradient(135deg, #f6f8fa, #dcecfb)",
+                }}
               >
                 <img
                   src={product.image}
                   alt={product.name}
-                  className="img-fluid rounded"
+                  className="rounded"
                   style={{
                     height: "100%",
                     objectFit: "contain",
                     padding: "1.75rem 1rem",
+                    filter: "drop-shadow(5px 5px 10px rgba(0, 0, 0, 0.5))",
                   }}
                 />
               </figure>
