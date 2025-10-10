@@ -44,7 +44,10 @@ ShopZone es un e-commerce desarrollado como proyecto final para el curso de Reac
    ```powershell
    npm install
    ```
-3. Configura la variable de entorno `VITE_API_URL` en un archivo `.env`.
+3. Configura la variable de entorno `VITE_API_URL` en un archivo `.env`. Puedes usar el archivo `.env.example` como referencia:
+   ```bash
+   cp .env.example .env
+   ```
 4. Inicia el proyecto:
    ```powershell
    npm run dev
