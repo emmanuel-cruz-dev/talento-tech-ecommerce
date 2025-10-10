@@ -29,14 +29,14 @@ function ProductCard({
     <Card>
       <Link
         to={`/product/${id}`}
-        className="text-decoration-none"
+        className="text-decoration-none card__img-link"
         style={{
           background: "linear-gradient(135deg, #f6f8fa, #dcecfb)",
         }}
         title="Ver más información"
       >
         <Card.Img
-          className="py-2"
+          className="p-4 card__img"
           variant="top"
           src={image}
           alt={title}
@@ -48,13 +48,7 @@ function ProductCard({
         />
       </Link>
       <Card.Body>
-        <Link
-          to={`/product/${id}`}
-          className="text-decoration-none text-dark"
-          title="Ver más información"
-        >
-          <Card.Title className="line-clamp-1">{title}</Card.Title>
-        </Link>
+        <Card.Title className="line-clamp-1">{title}</Card.Title>
         <Card.Text
           className="mb-1"
           style={{ color: "blue", fontSize: "1.2rem", fontWeight: "500" }}
