@@ -2,6 +2,7 @@ import React from "react";
 import { Row, Col, Button, Badge } from "react-bootstrap";
 import { Minus, Plus, Trash2, ShoppingBag } from "lucide-react";
 import { useCart } from "../../../context/CartContext";
+import { capitalizeFirstLetter } from "../../../utils/utils";
 
 const CartItem = ({ product, index }) => {
   const {
@@ -19,15 +20,22 @@ const CartItem = ({ product, index }) => {
       <Row className="align-items-center g-3">
         <Col xs={12} sm={3}>
           <figure
-            className="bg-light rounded d-flex align-items-center justify-content-center"
-            style={{ height: "100px" }}
+            className="rounded d-flex align-items-center justify-content-center"
+            style={{
+              height: "100px",
+              background: "linear-gradient(135deg, #f6f8fa, #dcecfb)",
+            }}
           >
             {product.image ? (
               <img
                 src={product.image}
                 alt={product.title}
-                className="img-fluid rounded"
-                style={{ maxHeight: "100px", objectFit: "cover" }}
+                className="img-fluid rounded py-3"
+                style={{
+                  maxHeight: "100px",
+                  objectFit: "cover",
+                  filter: "drop-shadow(5px 5px 10px rgba(0, 0, 0, 0.5))",
+                }}
               />
             ) : (
               <ShoppingBag size={40} className="text-muted" />
@@ -40,11 +48,8 @@ const CartItem = ({ product, index }) => {
           <p className="mb-0 small fw-semibold">
             Precio unitario: ${product.price}
           </p>
-          <p
-            className="text-muted mb-0 small line-clamp-2"
-            style={{ textTransform: "capitalize" }}
-          >
-            {product.description || "Sin descripción"}
+          <p className="text-muted mb-0 small line-clamp-2">
+            {capitalizeFirstLetter(product.description) || "Sin descripción"}
           </p>
         </Col>
 
@@ -54,7 +59,7 @@ const CartItem = ({ product, index }) => {
               variant="outline-secondary"
               size="sm"
               onClick={() => handleDecreaseQuantity(product)}
-              className="rounded-circle"
+              className="rounded-circle d-flex align-items-center justify-content-center"
               style={{ width: "32px", height: "32px" }}
             >
               <Minus size={16} />
@@ -66,7 +71,7 @@ const CartItem = ({ product, index }) => {
               variant="outline-secondary"
               size="sm"
               onClick={() => handleAddToCart(product)}
-              className="rounded-circle p-1"
+              className="rounded-circle d-flex align-items-center justify-content-center"
               style={{ width: "32px", height: "32px" }}
             >
               <Plus size={16} />
