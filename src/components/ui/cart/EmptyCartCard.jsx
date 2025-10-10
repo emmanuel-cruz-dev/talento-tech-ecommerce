@@ -2,13 +2,25 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { Card, Button } from "react-bootstrap";
 import { ShoppingBag } from "lucide-react";
+import { useAuth } from "../../../context/AuthContext";
 
 function EmptyCartCard() {
+  const { user } = useAuth();
+
   return (
     <Card className="shadow-sm border-0 text-center py-5">
       <Card.Body>
         <ShoppingBag size={64} className="text-muted mb-3" />
-        <h4 className="mb-1">Tu carrito está vacío</h4>
+        <h4 className="mb-1">
+          {user ? (
+            <>
+              <span style={{ textTransform: "capitalize" }}>{user}</span>, tu
+              carrito está vacío
+            </>
+          ) : (
+            "Tu carrito está vacío"
+          )}
+        </h4>
         <p className="text-muted mb-4">
           Agrega productos para comenzar tu compra
         </p>
