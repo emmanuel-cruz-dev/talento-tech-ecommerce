@@ -2,7 +2,7 @@ const BASE_URL = import.meta.env.VITE_API_URL;
 
 const getProducts = async () => {
   try {
-    const response = await fetch(`${BASE_URL}/products`);
+    const response = await fetch(`${BASE_URL}/products?limit=6`);
 
     if (!response.ok) {
       throw new Error(`Error fetching products: ${response.status}`);
