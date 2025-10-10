@@ -55,7 +55,7 @@ function ProductSlideList({ title }) {
                 <ProductCard isLoading={true} />
               </SwiperSlide>
             ))
-          : products.slice(0, 6).map((product) => (
+          : products.map((product) => (
               <SwiperSlide key={product.id}>
                 <ProductCard
                   id={product.id}
