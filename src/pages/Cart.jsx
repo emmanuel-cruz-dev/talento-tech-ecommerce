@@ -14,21 +14,18 @@ function Cart() {
   return (
     <Container className="py-5">
       <header className="mb-4">
-        <h1 className="display-5 fw-bold mb-2">
-          {user ? (
-            <>
-              Carrito de{" "}
-              <span style={{ textTransform: "capitalize" }}>{user}</span>
-            </>
-          ) : (
-            "Mi carrito"
-          )}
-        </h1>
+        <h1 className="display-5 fw-bold mb-2">Mi carrito</h1>
         <p className="text-muted">
-          {cart.length > 0 &&
-            `Tienes ${getCartItemsCount()} ${
-              getCartItemsCount() === 1 ? "producto" : "productos"
-            } en tu carrito`}
+          {cart.length > 0 && (
+            <>
+              {user && (
+                <span style={{ textTransform: "capitalize" }}>{user}</span>
+              )}{" "}
+              tienes {getCartItemsCount()}{" "}
+              {getCartItemsCount() === 1 ? "producto" : "productos"} en tu
+              carrito
+            </>
+          )}
         </p>
       </header>
 
