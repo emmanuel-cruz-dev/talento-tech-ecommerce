@@ -4,15 +4,16 @@ import { Link, useNavigate } from "react-router-dom";
 import { ShoppingCart } from "lucide-react";
 import { useCart } from "../context/CartContext";
 import { useAuth } from "../context/AuthContext";
+import { useHandleLogout } from "../hooks/useHandleLogout";
 
 function NavigationBar() {
   const { getCartItemsCount } = useCart();
-  const { isAuthenticated, login, logout } = useAuth();
+  const { isAuthenticated } = useAuth();
   const navigate = useNavigate();
+  const handleLogout = useHandleLogout();
 
-  const handleLogout = () => {
-    logout();
-    navigate("/");
+  const handleLogin = () => {
+    navigate("/login");
   };
 
   return (
@@ -40,8 +41,14 @@ function NavigationBar() {
             <Nav.Link as={Link} to="/products">
               Productos
             </Nav.Link>
+
+            {isAuthenticated && (
+              <Nav.Link as={Link} to="/profile">
+                Perfil
+              </Nav.Link>
+            )}
             <Nav.Link
-              onClick={isAuthenticated ? handleLogout : login}
+              onClick={isAuthenticated ? handleLogout : handleLogin}
               className="border-0 bg-transparent tex"
             >
               {isAuthenticated ? "Cerrar sesión" : "Iniciar sesión"}
