@@ -39,14 +39,18 @@ function Login() {
 
           <Form onSubmit={handleSubmit}>
             <Form.Group className="mb-3 text-start">
-              <Form.Label className="fw-semibold">Nombre de usuario</Form.Label>
+              <Form.Label className="fw-semibold" htmlFor="userName">
+                Nombre de usuario
+              </Form.Label>
               <Form.Control
+                id="userName"
                 type="text"
                 placeholder="Ingresa tu nombre*"
                 value={userName}
                 onChange={(e) => setUserName(e.target.value)}
                 required
                 className="py-2"
+                autoComplete="off"
                 style={{
                   border: "1px solid #ced4da",
                 }}
