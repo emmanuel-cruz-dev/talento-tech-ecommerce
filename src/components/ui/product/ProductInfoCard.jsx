@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import { Card, Row, Col, Button, Badge } from "react-bootstrap";
 import { Star, ShoppingCart, Heart } from "lucide-react";
 import { capitalizeFirstLetter } from "../../../utils/utils";
@@ -76,9 +77,11 @@ const ProductInfoCard = ({ product }) => {
             </Col>
           </Row>
         ) : (
-          <Button variant="primary" className="w-100 py-2">
-            Inicia sesión para añadir al carrito
-          </Button>
+          <Link to="/login">
+            <Button variant="primary" className="w-100 py-2">
+              Inicia sesión para añadir al carrito
+            </Button>
+          </Link>
         )}
       </Card.Body>
     </Card>
