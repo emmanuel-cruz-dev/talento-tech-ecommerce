@@ -28,20 +28,26 @@ function NavigationBar() {
         <Navbar.Toggle aria-controls="main-navbar" />
         <Navbar.Collapse id="main-navbar">
           <Nav className="ms-auto">
-            <Nav.Link as={Link} to="/">
+            <Nav.Link as={Link} to="/" aria-label="Inicio">
               Inicio
             </Nav.Link>
-            <Nav.Link as={Link} to="/products">
+            <Nav.Link as={Link} to="/products" aria-label="Productos">
               Productos
             </Nav.Link>
 
             {isAuthenticated && (
-              <Nav.Link as={Link} to="/profile">
+              <Nav.Link as={Link} to="/profile" aria-label="Perfil">
                 Perfil
               </Nav.Link>
             )}
             {isAuthenticated ? (
-              <Nav.Link as={Link} to="/cart" className="cart__items-container">
+              <Nav.Link
+                as={Link}
+                to="/cart"
+                className="cart__items-container"
+                aria-label="Carrito"
+                title="Ir al carrito"
+              >
                 <ShoppingCart size={20} className="me-2" />
                 {getCartItemsCount() > 0 && (
                   <span className="cart__items-badge">
@@ -50,7 +56,7 @@ function NavigationBar() {
                 )}
               </Nav.Link>
             ) : (
-              <Nav.Link as={Link} to="/login">
+              <Nav.Link as={Link} to="/login" aria-label="Iniciar sesión">
                 Iniciar sesión
               </Nav.Link>
             )}
