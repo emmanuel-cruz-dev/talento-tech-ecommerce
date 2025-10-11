@@ -11,7 +11,7 @@ function Footer() {
             href="https://emmanuel-cruz.netlify.app/"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-light text-decoration-none"
+            className="text-white footer__developer-link"
             aria-label="Emmanuel Cruz"
             title="Emmanuel Cruz Portfolio"
           >
