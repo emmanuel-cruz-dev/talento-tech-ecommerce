@@ -66,3 +66,12 @@
 .card__img-link:hover .card__img {
   transform: scale(1.09);
 }
+
+.footer__developer-link {
+  text-decoration: none;
+  color: var(--bs-white);
+}
+
+.footer__developer-link:hover {
+  text-decoration: underline;
+}
