@@ -31,6 +31,7 @@ const CartItem = ({ product, index }) => {
                 src={product.image}
                 alt={product.title}
                 className="img-fluid rounded py-3"
+                loading="lazy"
                 style={{
                   maxHeight: "100px",
                   objectFit: "cover",

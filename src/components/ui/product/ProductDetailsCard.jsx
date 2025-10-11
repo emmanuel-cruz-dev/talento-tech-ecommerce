@@ -38,6 +38,7 @@ const ProductDetailsCard = ({ product, isLoading = false }) => {
                   src={product.image}
                   alt={product.name}
                   className="rounded"
+                  loading="lazy"
                   style={{
                     height: "100%",
                     objectFit: "contain",

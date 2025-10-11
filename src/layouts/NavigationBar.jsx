@@ -20,6 +20,7 @@ function NavigationBar() {
           <img
             src="/shop-zone-icon.svg"
             alt="Logo de ShopZone"
+            loading="lazy"
             width="30"
             height="30"
           />

@@ -15,6 +15,7 @@ function Loader() {
               className="img-fluid"
               src={ShopZoneLogo}
               alt="Logo de Dragon Ball"
+              loading="lazy"
               width="760"
               height="760"
               style={pulseStyle}

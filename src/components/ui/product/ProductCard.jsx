@@ -40,6 +40,7 @@ function ProductCard({
           variant="top"
           src={image}
           alt={title}
+          loading="lazy"
           style={{
             height: "15rem",
             objectFit: "contain",
