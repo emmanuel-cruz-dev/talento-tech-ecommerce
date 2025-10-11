@@ -74,7 +74,3 @@ ShopZone es un e-commerce desarrollado como proyecto final para el curso de Reac
 ## 🌐 API Utilizada
 
 Este proyecto utiliza [FakeStore-API](https://fakestoreapi.com/) para obtener datos de productos.
-
----
-
-Desarrollado por Emmanuel Cruz para Talento Tech.
