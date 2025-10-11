@@ -10,7 +10,7 @@ function Hero() {
     >
       <Container>
         <Row className="align-items-center">
-          <Col md={6} className="mb-4 mb-md-0">
+          <Col md={6} className="mb-4 mb-md-0 order-2 order-md-1">
             <h1 className="display-4 fw-bold">
               Bienvenido a <span className="text-primary">ShopZone</span>
             </h1>
@@ -30,7 +30,7 @@ function Hero() {
             </a>
           </Col>
 
-          <Col md={6} className="text-center">
+          <Col md={6} className="text-center order-1 order-md-2">
             <img
               src={HeroBanner}
               alt="Hero ShopZone"
@@ -39,6 +39,8 @@ function Hero() {
                 maxHeight: "460px",
                 filter: "drop-shadow(5px 5px 10px rgba(0, 0, 0, 0.5))",
               }}
+              width={800}
+              height={800}
             />
           </Col>
         </Row>
