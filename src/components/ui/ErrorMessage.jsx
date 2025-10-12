@@ -9,9 +9,9 @@ const ErrorMessage = ({ error, entity, onRetry }) => {
 
   return (
     <article
-      className="alert alert-warning mt-5"
+      className="alert alert-warning"
       role="alert"
-      style={{ maxWidth: "460px", marginLeft: "1.25rem" }}
+      style={{ maxWidth: "460px" }}
     >
       <p className="text-danger">
         <strong>Atención:</strong> {message}
