@@ -40,10 +40,26 @@ function Profile() {
             <Button
               variant="outline-primary"
               onClick={() => navigate("/")}
-              className="fw-semibold "
+              className="fw-semibold"
             >
               Ir al inicio
             </Button>
+            <div className="d-flex gap-3 w-100">
+              <Button
+                variant="outline-primary w-100"
+                onClick={() => navigate("/products")}
+                className="fw-semibold"
+              >
+                Ir a productos
+              </Button>
+              <Button
+                variant="outline-primary w-100"
+                onClick={() => navigate("/cart")}
+                className="fw-semibold"
+              >
+                Ver carrito
+              </Button>
+            </div>
             <Button
               variant="danger"
               onClick={handleLogout}
