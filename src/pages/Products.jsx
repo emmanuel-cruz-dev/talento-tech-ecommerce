@@ -10,13 +10,13 @@ function Products() {
   const { products, loading, error } = useProductsByCategory(selectedCategory);
 
   return (
-    <Container fluid className="mb-4">
+    <Container fluid>
       <Row>
         <Col
           md={3}
           lg={2}
-          className="mb-4 mb-md-0 py-4"
-          style={{ background: "#eee" }}
+          className="mb-md-0 py-4"
+          style={{ background: "#eee", minHeight: "80vh" }}
         >
           <div className="sticky-top" style={{ top: "68px", zIndex: 1 }}>
             <h5 className="mb-3" style={{ fontSize: "1.5rem" }}>
@@ -39,7 +39,7 @@ function Products() {
           </div>
         </Col>
 
-        <Col md={9} lg={10}>
+        <Col md={9} lg={10} className="mb-4">
           <ProductsGallery
             title={
               CATEGORIES.find((category) => category.id === selectedCategory)
