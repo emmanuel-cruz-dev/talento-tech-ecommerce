@@ -1,3 +1,4 @@
+import React from "react";
 import { Container, Row } from "react-bootstrap";
 import { benefits } from "../../data/benefits";
 import BenefitCard from "./BenefitCard";

@@ -1,3 +1,4 @@
+import React from "react";
 import ShopZoneLogo from "../../assets/shop-zone-banner.avif";
 import { pulseKeyframes, pulseStyle } from "../../constants/pulseStyles";
 
