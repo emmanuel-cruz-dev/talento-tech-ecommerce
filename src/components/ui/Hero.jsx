@@ -39,6 +39,7 @@ function Hero() {
               loading="lazy"
               style={{
                 maxHeight: "460px",
+                objectFit: "cover",
                 filter: "drop-shadow(5px 5px 10px rgba(0, 0, 0, 0.5))",
               }}
               width={800}
