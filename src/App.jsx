@@ -5,11 +5,13 @@ import NavigationBar from "./layouts/NavigationBar";
 import Footer from "./layouts/Footer";
 import ScrollToTop from "./helpers/ScrollToTop";
 import { CartProvider } from "./context/CartContext";
+import ProgressBar from "./components/ui/ProgressBar";
 
 function App() {
   return (
     <Router>
       <CartProvider>
+        <ProgressBar />
         <div className="d-flex flex-column min-vh-100">
           <NavigationBar />
           <main className="flex-grow-1 bg-light">
