@@ -3,10 +3,10 @@ import { Container, Row, Col, ListGroup } from "react-bootstrap";
 import ProductsGallery from "../components/ui/product/ProductsGallery";
 import { useProductsByCategory } from "../hooks/useProducts";
 import { CATEGORIES } from "../constants/categories";
-import { useCategorySelect } from "../hooks/useCategorySelect";
+import { useQueryHandler } from "../hooks/useQueryHandler";
 
 function Products() {
-  const { selectedCategory, handleCategorySelect } = useCategorySelect("all");
+  const { selectedCategory, handleCategoryClick } = useQueryHandler();
   const { products, loading, error } = useProductsByCategory(selectedCategory);
 
   return (
@@ -28,7 +28,7 @@ function Products() {
                   key={category.id}
                   action
                   active={selectedCategory === category.id}
-                  onClick={handleCategorySelect(category.id)}
+                  onClick={() => handleCategoryClick(category.id)}
                   className="border-0 rounded mb-2"
                   style={{ cursor: "pointer" }}
                 >
