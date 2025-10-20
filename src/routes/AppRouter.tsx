@@ -5,7 +5,7 @@ import Loader from "../components/ui/Loader";
 const Home = lazy(() => import("../pages/Home"));
 const Product = lazy(() => import("../pages/Product"));
 const Cart = lazy(() => import("../pages/Cart"));
-const Products = lazy(() => import("../pages/Product"));
+const Products = lazy(() => import("../pages/Products"));
 const Profile = lazy(() => import("../pages/Profile"));
 const Login = lazy(() => import("../pages/Login"));
 const NotFound = lazy(() => import("../pages/NotFound"));
