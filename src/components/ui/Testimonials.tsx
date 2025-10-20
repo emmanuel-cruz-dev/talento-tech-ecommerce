@@ -1,4 +1,3 @@
-import React from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import { testimonials } from "../../data/testimonials";
 import TestimonialCard from "./TestimonialCard";
