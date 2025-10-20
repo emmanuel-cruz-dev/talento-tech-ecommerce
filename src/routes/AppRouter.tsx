@@ -1,15 +1,15 @@
 import { Routes, Route } from "react-router-dom";
 import { Suspense, lazy } from "react";
-import Loader from "../components/ui/Loader.jsx";
+import Loader from "../components/ui/Loader";
 
-const Home = lazy(() => import("../pages/Home.jsx"));
-const Product = lazy(() => import("../pages/Product.jsx"));
-const Cart = lazy(() => import("../pages/Cart.jsx"));
-const Products = lazy(() => import("../pages/Products.jsx"));
-const Profile = lazy(() => import("../pages/Profile.jsx"));
-const Login = lazy(() => import("../pages/Login.jsx"));
-const NotFound = lazy(() => import("../pages/NotFound.jsx"));
-const PrivateRoute = lazy(() => import("./PrivateRoute.jsx"));
+const Home = lazy(() => import("../pages/Home"));
+const Product = lazy(() => import("../pages/Product"));
+const Cart = lazy(() => import("../pages/Cart"));
+const Products = lazy(() => import("../pages/Product"));
+const Profile = lazy(() => import("../pages/Profile"));
+const Login = lazy(() => import("../pages/Login"));
+const NotFound = lazy(() => import("../pages/NotFound"));
+const PrivateRoute = lazy(() => import("./PrivateRoute"));
 
 function AppRouter() {
   return (
