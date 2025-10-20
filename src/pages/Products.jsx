@@ -1,13 +1,24 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Container, Row, Col, ListGroup } from "react-bootstrap";
 import ProductsGallery from "../components/ui/product/ProductsGallery";
 import { useProductsByCategory } from "../hooks/useProducts";
 import { CATEGORIES } from "../constants/categories";
 import { useQueryHandler } from "../hooks/useQueryHandler";
+import { usePagination } from "../hooks/usePagination";
+import PaginationItem from "../components/ui/PaginationItem";
 
 function Products() {
   const { selectedCategory, handleCategoryClick } = useQueryHandler();
   const { products, loading, error } = useProductsByCategory(selectedCategory);
+  const { currentPage, handlePageChange, paginate, getTotalPages, resetPage } =
+    usePagination(6);
+
+  useEffect(() => {
+    resetPage();
+  }, [selectedCategory]);
+
+  const paginatedProducts = paginate(products);
+  const totalPages = getTotalPages(products.length);
 
   return (
     <Container fluid>
@@ -45,9 +56,16 @@ function Products() {
               CATEGORIES.find((category) => category.id === selectedCategory)
                 ?.name
             }
-            products={products}
+            products={paginatedProducts}
             loading={loading}
             error={error}
+          />
+
+          <PaginationItem
+            currentPage={currentPage}
+            totalPages={totalPages}
+            onPageChange={handlePageChange}
+            isLoading={loading}
           />
         </Col>
       </Row>
