@@ -1,6 +1,16 @@
-import React from "react";
+interface SummaryRowProps {
+  label: string;
+  value: string;
+  className?: string;
+  valueClassName?: string;
+}
 
-function SummaryRow({ label, value, className = "", valueClassName = "" }) {
+function SummaryRow({
+  label,
+  value,
+  className = "",
+  valueClassName = "",
+}: SummaryRowProps) {
   const rowClasses = `d-flex justify-content-between ${className}`;
   const valueClasses = `fw-bold ${valueClassName}`;
 

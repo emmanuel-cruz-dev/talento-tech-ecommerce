@@ -1,8 +1,8 @@
-import React from "react";
 import { Card } from "react-bootstrap";
 import StarRating from "./StarRating";
+import { TestimonialCardProps } from "../../types/home";
 
-const TestimonialCard = ({ text, author, rating }) => {
+const TestimonialCard = ({ text, author, rating }: TestimonialCardProps) => {
   return (
     <Card className="h-100 shadow-sm border-0 py-4 px-3">
       <Card.Body>

@@ -1,4 +1,3 @@
-import React from "react";
 import { Pagination } from "react-bootstrap";
 
 function PaginationItem({ currentPage, totalPages, onPageChange, isLoading }) {

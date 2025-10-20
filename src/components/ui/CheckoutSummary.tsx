@@ -1,4 +1,3 @@
-import React from "react";
 import SummaryRow from "./SummaryRow";
 
 function CheckoutSummary({ orderTotal, itemsCount }) {

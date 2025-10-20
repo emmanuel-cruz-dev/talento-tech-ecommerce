@@ -1,7 +1,6 @@
-import React from "react";
 import { Star } from "lucide-react";
 
-const StarRating = ({ rating }) => {
+const StarRating = ({ rating }: { rating: number }) => {
   return (
     <article className="d-flex gap-1">
       {[1, 2, 3, 4, 5].map((star) => (
