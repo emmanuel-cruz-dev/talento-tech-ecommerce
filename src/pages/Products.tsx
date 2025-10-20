@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import { useEffect } from "react";
 import { Container, Row, Col, ListGroup } from "react-bootstrap";
 import ProductsGallery from "../components/ui/product/ProductsGallery";
 import { useProductsByCategory } from "../hooks/useProducts";

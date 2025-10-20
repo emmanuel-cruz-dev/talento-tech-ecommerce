@@ -1,4 +1,3 @@
-import React from "react";
 import Hero from "../components/ui/Hero";
 import ProductSlideList from "../components/ui/product/ProductSlideList";
 import Benefits from "../components/ui/Benefits";

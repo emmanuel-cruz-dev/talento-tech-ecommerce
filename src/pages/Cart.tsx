@@ -1,4 +1,3 @@
-import React from "react";
 import { Container, Row, Col, Card, Button } from "react-bootstrap";
 import { Trash2 } from "lucide-react";
 import { useCart } from "../context/CartContext";

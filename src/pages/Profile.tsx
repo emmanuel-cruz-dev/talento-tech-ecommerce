@@ -1,4 +1,3 @@
-import React from "react";
 import { useNavigate } from "react-router-dom";
 import { Container, Button, Card } from "react-bootstrap";
 import { useAuth } from "../context/AuthContext";

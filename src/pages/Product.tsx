@@ -1,4 +1,3 @@
-import React from "react";
 import { useParams } from "react-router-dom";
 import { useProductById } from "../hooks/useProducts";
 import ProductSlideList from "../components/ui/product/ProductSlideList";
