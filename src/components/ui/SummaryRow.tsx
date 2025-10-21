@@ -1,9 +1,4 @@
-interface SummaryRowProps {
-  label: string;
-  value: string;
-  className?: string;
-  valueClassName?: string;
-}
+import { SummaryRowProps } from "../../types/checkout.types";
 
 function SummaryRow({
   label,
