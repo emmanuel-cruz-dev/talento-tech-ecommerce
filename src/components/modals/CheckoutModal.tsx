@@ -1,11 +1,16 @@
-import React from "react";
 import { Modal, Button } from "react-bootstrap";
 import { CheckCircle, X } from "lucide-react";
 import { useAuth } from "../../context/AuthContext";
 import CheckoutSteps from "../ui/CheckoutSteps";
 import CheckoutSummary from "../ui/CheckoutSummary";
+import { CheckoutModalProps } from "../../types/common.types";
 
-function CheckoutModal({ show, onHide, orderTotal, itemsCount }) {
+function CheckoutModal({
+  show,
+  onHide,
+  orderTotal,
+  itemsCount,
+}: CheckoutModalProps) {
   const { user } = useAuth();
 
   return (
