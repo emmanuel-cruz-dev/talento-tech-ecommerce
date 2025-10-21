@@ -9,7 +9,7 @@ function Login() {
   const { login } = useAuth();
   const [userName, setUserName] = useState("");
 
-  const handleSubmit = (e) => {
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     if (userName.trim()) {
       login(userName);
