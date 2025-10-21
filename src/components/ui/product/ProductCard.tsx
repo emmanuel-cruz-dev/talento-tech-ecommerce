@@ -4,6 +4,7 @@ import ProductCardSkeleton from "./ProductCardSkeleton";
 import { useProductCard } from "../../../hooks/useProductCard";
 import { capitalizeFirstLetter } from "../../../utils/utils";
 import { useAuth } from "../../../context/AuthContext";
+import { ProductCardProps } from "../../../types/product";
 
 function ProductCard({
   id,
@@ -12,7 +13,7 @@ function ProductCard({
   description,
   image,
   isLoading = false,
-}) {
+}: ProductCardProps) {
   const { isAuthenticated } = useAuth();
   const { handleAddToCartClick } = useProductCard({
     id,
