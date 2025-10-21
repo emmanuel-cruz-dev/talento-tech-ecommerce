@@ -3,7 +3,7 @@ import { CheckCircle, X } from "lucide-react";
 import { useAuth } from "../../context/AuthContext";
 import CheckoutSteps from "../ui/CheckoutSteps";
 import CheckoutSummary from "../ui/CheckoutSummary";
-import { CheckoutModalProps } from "../../types/common.types";
+import { CheckoutModalProps } from "../../types/checkout.types";
 
 function CheckoutModal({
   show,
