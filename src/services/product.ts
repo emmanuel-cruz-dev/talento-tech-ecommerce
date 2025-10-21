@@ -1,6 +1,8 @@
+import { Product } from "../types/product";
+
 const BASE_URL = import.meta.env.VITE_API_URL;
 
-const getProducts = async () => {
+const getProducts = async (): Promise<Product[]> => {
   try {
     const response = await fetch(`${BASE_URL}/products?limit=6`);
 
@@ -16,7 +18,7 @@ const getProducts = async () => {
   }
 };
 
-const getProductById = async (id) => {
+const getProductById = async (id: number): Promise<Product> => {
   try {
     const response = await fetch(`${BASE_URL}/products/${id}`);
 
@@ -24,7 +26,12 @@ const getProductById = async (id) => {
       throw new Error(`Error fetching product: ${response.status}`);
     }
 
-    const data = await response.json();
+    const text = await response.text();
+    if (!text) {
+      throw new Error("Empty response from server");
+    }
+
+    const data = JSON.parse(text);
     return data;
   } catch (error) {
     console.error(error);
@@ -32,7 +39,7 @@ const getProductById = async (id) => {
   }
 };
 
-const getProductsByCategory = async (category) => {
+const getProductsByCategory = async (category: string): Promise<Product[]> => {
   try {
     const url =
       category === "all"
