@@ -15,7 +15,7 @@ export const useQueryHandler = () => {
     }
   }, [categoryParam]);
 
-  const handleCategoryClick = (categoryId) => {
+  const handleCategoryClick = (categoryId: string) => {
     handleCategorySelect(categoryId)();
     setSearchParams({ category: categoryId });
   };
