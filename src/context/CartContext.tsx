@@ -1,11 +1,13 @@
-import React, { createContext, useState } from "react";
+import { createContext, useContext, useState, ReactNode } from "react";
+import { Product } from "../types/product.types";
+import { CartContextType, CartItem } from "../types/cart.types";
 
-const CartContext = createContext();
+const CartContext = createContext<CartContextType | undefined>(undefined);
 
-export function CartProvider({ children }) {
-  const [cart, setCart] = useState([]);
+export function CartProvider({ children }: { children: ReactNode }) {
+  const [cart, setCart] = useState<CartItem[]>([]);
 
-  const handleAddToCart = (product) => {
+  const handleAddToCart = (product: Product): void => {
     const existingProductIndex = cart.findIndex((p) => p.id === product.id);
 
     if (existingProductIndex !== -1) {
@@ -20,12 +22,12 @@ export function CartProvider({ children }) {
     }
   };
 
-  const handleRemoveFromCart = (product) => {
+  const handleRemoveFromCart = (product: Product): void => {
     const newCart = cart.filter((p) => p.id !== product.id);
     setCart(newCart);
   };
 
-  const handleDecreaseQuantity = (product) => {
+  const handleDecreaseQuantity = (product: Product): void => {
     const existingProductIndex = cart.findIndex((p) => p.id === product.id);
 
     if (existingProductIndex !== -1) {
@@ -44,17 +46,17 @@ export function CartProvider({ children }) {
     }
   };
 
-  const handleClearCart = () => {
+  const handleClearCart = (): void => {
     setCart([]);
   };
 
-  const getCartTotal = () => {
+  const getCartTotal = (): number => {
     return cart.reduce((total, item) => {
       return total + item.price * item.quantity;
     }, 0);
   };
 
-  const getCartItemsCount = () => {
+  const getCartItemsCount = (): number => {
     return cart.reduce((count, item) => count + item.quantity, 0);
   };
 
@@ -75,4 +77,10 @@ export function CartProvider({ children }) {
   );
 }
 
-export const useCart = () => React.useContext(CartContext);
+export const useCart = (): CartContextType => {
+  const context = useContext(CartContext);
+  if (!context) {
+    throw new Error("useCart must be used within a CartProvider");
+  }
+  return context;
+};
