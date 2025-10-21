@@ -4,7 +4,7 @@ import {
   Product,
   UseProductByIdReturn,
   UseProductsReturn,
-} from "../types/product";
+} from "../types/product.types";
 
 export const useProducts = (): UseProductsReturn => {
   const [products, setProducts] = useState<Product[]>([]);
