@@ -1,6 +1,5 @@
-export interface CheckoutModalProps {
-  show: boolean;
-  onHide: () => void;
-  orderTotal: number;
-  itemsCount: number;
+export interface ErrorMessageProps {
+  error: Error | string;
+  entity: string;
+  onRetry?: () => void;
 }
