@@ -1,6 +1,6 @@
 import { Card } from "react-bootstrap";
 import StarRating from "./StarRating";
-import { TestimonialCardProps } from "../../types/home";
+import { TestimonialCardProps } from "../../types/home.types";
 
 const TestimonialCard = ({ text, author, rating }: TestimonialCardProps) => {
   return (
