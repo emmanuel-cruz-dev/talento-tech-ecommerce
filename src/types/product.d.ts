@@ -32,3 +32,15 @@ export interface ProductDetailsCardProps {
   product: Product | null;
   isLoading?: boolean;
 }
+
+export interface UseProductsReturn {
+  products: Product[];
+  loading: boolean;
+  error: string | null;
+}
+
+export interface UseProductByIdReturn {
+  product: Product | null;
+  loading: boolean;
+  error: string | null;
+}
