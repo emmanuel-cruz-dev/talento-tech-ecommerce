@@ -4,7 +4,7 @@ import ProductCardSkeleton from "./ProductCardSkeleton";
 import { useProductCard } from "../../../hooks/useProductCard";
 import { capitalizeFirstLetter } from "../../../utils/utils";
 import { useAuth } from "../../../context/AuthContext";
-import { ProductCardProps } from "../../../types/product";
+import { ProductCardProps } from "../../../types/product.types";
 
 function ProductCard({
   id,
