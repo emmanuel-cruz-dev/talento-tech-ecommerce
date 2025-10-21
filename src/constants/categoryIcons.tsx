@@ -1,4 +1,3 @@
-import React from "react";
 import { Laptop, Gem, Icon } from "lucide-react";
 import { dress, trousers } from "@lucide/lab";
 
