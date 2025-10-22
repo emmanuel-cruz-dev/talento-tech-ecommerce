@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { useCart } from "../context/CartContext";
+import { useCart } from "./useCart";
 import { OrderData } from "../types/checkout.types";
 
 export const useCheckoutOrder = () => {
