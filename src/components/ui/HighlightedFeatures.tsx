@@ -1,6 +1,7 @@
 import { Card, Row, Col } from "react-bootstrap";
+import { HighlightedFeaturesProps } from "../../types/product.types";
 
-const HighlightedFeatures = ({ features }) => {
+const HighlightedFeatures = ({ features }: HighlightedFeaturesProps) => {
   return (
     <Card className="shadow-sm border-0 py-2">
       <Card.Body>
