@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { Card, Button } from "react-bootstrap";
 import { ShoppingBag } from "lucide-react";
-import { useAuth } from "../../../context/AuthContext";
+import { useAuth } from "../../../hooks/useAuth";
 
 function EmptyCartCard() {
   const { user } = useAuth();
