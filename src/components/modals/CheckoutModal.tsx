@@ -1,6 +1,6 @@
 import { Modal, Button } from "react-bootstrap";
 import { CheckCircle, X } from "lucide-react";
-import { useAuth } from "../../context/AuthContext";
+import { useAuth } from "../../hooks/useAuth";
 import CheckoutSteps from "../ui/CheckoutSteps";
 import CheckoutSummary from "../ui/CheckoutSummary";
 import { CheckoutModalProps } from "../../types/checkout.types";
