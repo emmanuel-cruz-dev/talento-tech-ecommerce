@@ -1,6 +1,7 @@
 import { Col } from "react-bootstrap";
+import { BenefitCardProps } from "../../types/home.types";
 
-const BenefitCard = ({ title, description, icon: Icon }) => {
+const BenefitCard = ({ title, description, icon: Icon }: BenefitCardProps) => {
   return (
     <Col md={4} className="mb-4 mb-md-0">
       <Icon size={40} className="text-primary mb-3" />
