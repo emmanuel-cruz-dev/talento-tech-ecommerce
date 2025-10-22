@@ -1,6 +1,6 @@
 import { useNavigate } from "react-router-dom";
-import { useAuth } from "../context/AuthContext";
-import { useCart } from "../context/CartContext";
+import { useAuth } from "./useAuth";
+import { useCart } from "./useCart";
 
 export const useHandleLogout = () => {
   const navigate = useNavigate();
