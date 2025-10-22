@@ -1,9 +1,10 @@
 import { Row, Col, Button, Badge } from "react-bootstrap";
 import { Minus, Plus, Trash2, ShoppingBag } from "lucide-react";
-import { useCart } from "../../../context/CartContext";
+import { useCart } from "../../../hooks/useCart";
 import { capitalizeFirstLetter } from "../../../utils/utils";
+import { CartItemProps } from "../../../types/cart.types";
 
-const CartItem = ({ product, index }) => {
+const CartItem = ({ product, index }: CartItemProps) => {
   const {
     cart,
     handleDecreaseQuantity,
