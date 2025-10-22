@@ -2,6 +2,7 @@ import { Container, Row, Col, Card } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { CATEGORIES } from "../../constants/categories";
 import { CATEGORY_ICONS } from "../../constants/categoryIcons";
+import { CategoryId } from "../../types/product.types";
 
 function Categories() {
   const displayCategories = CATEGORIES.filter((cat) => cat.id !== "all").slice(
@@ -32,7 +33,7 @@ function Categories() {
                   }
                 >
                   <div style={{ margin: "auto" }}>
-                    {CATEGORY_ICONS[category.id]}
+                    {CATEGORY_ICONS[category.id as Exclude<CategoryId, "all">]}
                   </div>
                   <Card.Title>{category.name}</Card.Title>
                 </Card>
