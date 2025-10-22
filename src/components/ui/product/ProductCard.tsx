@@ -1,29 +1,31 @@
 import { Link } from "react-router-dom";
 import { Card, Button } from "react-bootstrap";
 import ProductCardSkeleton from "./ProductCardSkeleton";
+import { useAuth } from "../../../hooks/useAuth";
 import { useProductCard } from "../../../hooks/useProductCard";
 import { capitalizeFirstLetter } from "../../../utils/utils";
-import { useAuth } from "../../../context/AuthContext";
 import { ProductCardProps } from "../../../types/product.types";
 
-function ProductCard({
-  id,
-  title,
-  price,
-  description,
-  image,
-  isLoading = false,
-}: ProductCardProps) {
+function ProductCard(props: ProductCardProps) {
   const { isAuthenticated } = useAuth();
+  const {
+    id = 0,
+    title = "",
+    price = 0,
+    category = "",
+    description = "",
+    image = "",
+  } = props;
   const { handleAddToCartClick } = useProductCard({
     id,
     title,
     price,
+    category,
     description,
     image,
   });
 
-  if (isLoading) return <ProductCardSkeleton />;
+  if (props.isLoading) return <ProductCardSkeleton />;
 
   return (
     <Card>
