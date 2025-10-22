@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { Card, Button, Col } from "react-bootstrap";
 import { ArrowLeft } from "lucide-react";
-import { useCart } from "../../../context/CartContext";
+import { useCart } from "../../../hooks/useCart";
 import CheckoutModal from "../../modals/CheckoutModal";
 import { useCheckoutOrder } from "../../../hooks/useCheckoutOrder";
 
