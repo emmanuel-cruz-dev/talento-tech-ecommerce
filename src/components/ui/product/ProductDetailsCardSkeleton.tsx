@@ -1,10 +1,9 @@
-import React from "react";
 import { Link } from "react-router-dom";
 import { Container, Card, Row, Col, Placeholder } from "react-bootstrap";
 import { ArrowLeft } from "lucide-react";
+import { useAuth } from "../../../hooks/useAuth";
 import HighlightedFeatures from "../HighlightedFeatures";
 import { features } from "../../../data/features";
-import { useAuth } from "../../../context/AuthContext";
 
 function ProductDetailsCardSkeleton() {
   const { isAuthenticated } = useAuth();
