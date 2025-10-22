@@ -1,19 +1,20 @@
-import React from "react";
 import { Link } from "react-router-dom";
 import { Card, Row, Col, Button, Badge } from "react-bootstrap";
 import { Star, ShoppingCart, Heart } from "lucide-react";
-import { capitalizeFirstLetter } from "../../../utils/utils";
+import { useAuth } from "../../../hooks/useAuth";
 import { useProductCard } from "../../../hooks/useProductCard";
-import { useAuth } from "../../../context/AuthContext";
+import { capitalizeFirstLetter } from "../../../utils/utils";
+import { ProductInfoCardProps } from "../../../types/product.types";
 
-const ProductInfoCard = ({ product }) => {
+const ProductInfoCard = ({ product }: ProductInfoCardProps) => {
   const { isAuthenticated } = useAuth();
   const { handleAddToCartClick } = useProductCard({
-    id: product.id,
-    title: product.title,
-    price: product.price,
-    description: product.description,
-    image: product.image,
+    id: product.id || 0,
+    title: product.title || "",
+    price: product.price || 0,
+    category: product.category || "",
+    description: product.description || "",
+    image: product.image || "",
   });
 
   return (
@@ -43,11 +44,11 @@ const ProductInfoCard = ({ product }) => {
         </div>
 
         <p className="text-muted mb-4">
-          {capitalizeFirstLetter(product.description)}
+          {capitalizeFirstLetter(product.description || "")}
         </p>
 
         <div className="mb-4">
-          {product.id > 0 ? (
+          {product.id !== undefined && product.id > 0 ? (
             <Badge bg="success" className="p-2">
               En stock ({product.id * 23} disponibles)
             </Badge>
