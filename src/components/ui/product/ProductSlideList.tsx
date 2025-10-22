@@ -1,4 +1,3 @@
-import React from "react";
 import { Link } from "react-router-dom";
 import { Container, Button } from "react-bootstrap";
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -12,7 +11,7 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 
-function ProductSlideList({ title }) {
+function ProductSlideList({ title }: { title: string }) {
   const { products, loading, error } = useProducts();
 
   return (
