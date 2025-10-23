@@ -13,6 +13,7 @@ export const useQueryHandler = () => {
     if (categoryParam !== selectedCategory) {
       handleCategorySelect(categoryParam)();
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [categoryParam]);
 
   const handleCategoryClick = (categoryId: string) => {
