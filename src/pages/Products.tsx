@@ -15,6 +15,7 @@ function Products() {
 
   useEffect(() => {
     resetPage();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [selectedCategory]);
 
   const paginatedProducts = paginate(products);
