@@ -1,11 +1,11 @@
 # 🛍️ ShopZone
 
-**Proyecto Final - Curso React + Bootstrap TALENTO TECH - 2025**
+**Pre-entrega - Curso React + Bootstrap TALENTO TECH - 2025**
 
 👨‍💻 **Autor:** Emmanuel Cruz  
 🎓 **Comisión:** 25235
 
-ShopZone es un e-commerce desarrollado como proyecto final para el curso de React + Bootstrap. Permite explorar productos, agregarlos a un carrito, gestionar compras y navegar entre distintas secciones de manera segura y moderna.
+ShopZone es una pre-entrega del curso de React + Bootstrap, desarrollada para poner en práctica el manejo de componentes, props, hooks y estados globales. Incluye funcionalidades iniciales de un e-commerce, como iniciar sesión, listado de productos, detalle individual, carrito y navegar entre distintas secciones de manera segura y moderna. Sirvió como base para el proyecto final del curso.
 
 ---
 
