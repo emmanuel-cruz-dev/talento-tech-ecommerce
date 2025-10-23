@@ -1,92 +1,47 @@
-import { useState, useEffect } from "react";
+import { useQuery } from "@tanstack/react-query";
 import { productService } from "../services/product";
 import {
-  Product,
   UseProductByIdReturn,
   UseProductsReturn,
 } from "../types/product.types";
 
 export const useProducts = (): UseProductsReturn => {
-  const [products, setProducts] = useState<Product[]>([]);
-  const [loading, setLoading] = useState(false);
-  const [error, setError] = useState<string | null>(null);
+  const { data, isLoading, error } = useQuery({
+    queryKey: ["products"],
+    queryFn: productService.getProducts,
+  });
 
-  useEffect(() => {
-    const fetchProducts = async () => {
-      try {
-        setLoading(true);
-        setError(null);
-        const data = await productService.getProducts();
-        setProducts(data);
-      } catch (err: unknown) {
-        const errorMessage =
-          err instanceof Error ? err.message : "Error al cargar los productos";
-        setError(errorMessage);
-      } finally {
-        setLoading(false);
-      }
-    };
-
-    fetchProducts();
-  }, []);
-
-  return { products, loading, error };
+  return {
+    products: data ?? [],
+    loading: isLoading,
+    error: error instanceof Error ? error.message : null,
+  };
 };
 
 export const useProductById = (id: number): UseProductByIdReturn => {
-  const [product, setProduct] = useState<Product | null>(null);
-  const [loading, setLoading] = useState(false);
-  const [error, setError] = useState<string | null>(null);
+  const { data, isLoading, error } = useQuery({
+    queryKey: ["product", id],
+    queryFn: () => productService.getProductById(id),
+    enabled: !!id,
+  });
 
-  useEffect(() => {
-    const fetchProduct = async () => {
-      try {
-        setLoading(true);
-        setError(null);
-        const data = await productService.getProductById(id);
-        setProduct(data);
-      } catch (err: unknown) {
-        const errorMessage =
-          err instanceof Error ? err.message : "Error al cargar el producto";
-        setError(errorMessage);
-      } finally {
-        setLoading(false);
-      }
-    };
-
-    if (id) {
-      fetchProduct();
-    }
-  }, [id]);
-
-  return { product, loading, error };
+  return {
+    product: data ?? null,
+    loading: isLoading,
+    error: error instanceof Error ? error.message : null,
+  };
 };
 
 export const useProductsByCategory = (category: string): UseProductsReturn => {
-  const [products, setProducts] = useState<Product[]>([]);
-  const [loading, setLoading] = useState(false);
-  const [error, setError] = useState<string | null>(null);
+  const { data, isLoading, error } = useQuery({
+    queryKey: ["products", "category", category],
+    queryFn: () => productService.getProductsByCategory(category),
+    enabled: !!category,
+  });
 
-  useEffect(() => {
-    const fetchProducts = async () => {
-      try {
-        setLoading(true);
-        setError(null);
-        const data = await productService.getProductsByCategory(category);
-        setProducts(data);
-      } catch (err: unknown) {
-        const errorMessage =
-          err instanceof Error ? err.message : "Error al cargar los productos";
-        setError(errorMessage);
-      } finally {
-        setLoading(false);
-      }
-    };
-
-    if (category) {
-      fetchProducts();
-    }
-  }, [category]);
-
-  return { products, loading, error };
+  return {
+    products: data ?? [],
+    loading: isLoading,
+    error: error instanceof Error ? error.message : null,
+  };
 };
