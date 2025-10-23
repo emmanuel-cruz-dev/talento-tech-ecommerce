@@ -22,7 +22,7 @@ const ProductDetailsCard = ({
             className="text-decoration-none text-muted d-flex align-items-center gap-2"
           >
             <ArrowLeft size={20} />
-            Ir a la tienda
+            Volver a la tienda
           </Link>
         </header>
         <Card className="shadow-sm border-0">
@@ -45,7 +45,7 @@ const ProductDetailsCard = ({
           className="text-decoration-none text-muted d-flex align-items-center gap-2"
         >
           <ArrowLeft size={20} />
-          Ir a la tienda
+          Volver a la tienda
         </Link>
       </header>
 
