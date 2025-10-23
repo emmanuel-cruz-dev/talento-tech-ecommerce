@@ -12,6 +12,8 @@
   },
   "dependencies": {
     "@lucide/lab": "^0.1.2",
+    "@tanstack/react-query": "^5.90.5",
+    "axios": "^1.12.2",
     "bootstrap": "^5.3.8",
     "lucide-react": "^0.544.0",
     "nprogress": "^0.2.0",
