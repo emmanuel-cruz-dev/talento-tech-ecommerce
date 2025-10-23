@@ -1,4 +1,5 @@
 import { Container } from "react-bootstrap";
+import ECLogo from "../assets/e-logo.avif";
 
 function Footer() {
   return (
@@ -14,7 +15,13 @@ function Footer() {
             aria-label="Emmanuel Cruz"
             title="Emmanuel Cruz Portfolio"
           >
-            Emmanuel
+            <img
+              src={ECLogo}
+              alt="Emmanuel Cruz Logo"
+              style={{ width: "1.5rem", height: "auto", objectFit: "cover" }}
+              width="320"
+              height="320"
+            />
           </a>
         </p>
       </Container>
