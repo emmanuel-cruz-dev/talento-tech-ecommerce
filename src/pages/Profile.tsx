@@ -1,7 +1,7 @@
 import { useNavigate } from "react-router-dom";
 import { Container, Button, Card } from "react-bootstrap";
-import { useAuth } from "../context/AuthContext";
 import { CircleUserRound } from "lucide-react";
+import { useAuth } from "../hooks/useAuth";
 import { useHandleLogout } from "../hooks/useHandleLogout";
 
 function Profile() {
