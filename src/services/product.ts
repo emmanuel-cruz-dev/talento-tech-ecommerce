@@ -1,40 +1,41 @@
+import { AxiosError } from "axios";
+import axios from "./axiosConfig";
 import { Product } from "../types/product.types";
-
-const BASE_URL = import.meta.env.VITE_API_URL;
 
 const getProducts = async (): Promise<Product[]> => {
   try {
-    const response = await fetch(`${BASE_URL}/products?limit=6`);
+    const response = await axios.get("/products?limit=6");
 
-    if (!response.ok) {
-      throw new Error(`Error fetching products: ${response.status}`);
+    if (!response.data) {
+      throw new Error("Empty response from server");
     }
 
-    const data = await response.json();
-    return data;
+    return response.data;
   } catch (error) {
-    console.error(error);
+    const axiosError = error as AxiosError;
+    console.error(
+      "[getProducts] Error fetching products:",
+      axiosError.response
+    );
     throw error;
   }
 };
 
 const getProductById = async (id: number): Promise<Product> => {
   try {
-    const response = await fetch(`${BASE_URL}/products/${id}`);
+    const response = await axios.get(`/products/${id}`);
 
-    if (!response.ok) {
-      throw new Error(`Error fetching product: ${response.status}`);
-    }
-
-    const text = await response.text();
-    if (!text) {
+    if (!response.data) {
       throw new Error("Empty response from server");
     }
 
-    const data = JSON.parse(text);
-    return data;
+    return response.data;
   } catch (error) {
-    console.error(error);
+    const axiosError = error as AxiosError;
+    console.error(
+      "[getProductById] Error fetching product:",
+      axiosError.response?.data
+    );
     throw error;
   }
 };
@@ -42,20 +43,21 @@ const getProductById = async (id: number): Promise<Product> => {
 const getProductsByCategory = async (category: string): Promise<Product[]> => {
   try {
     const url =
-      category === "all"
-        ? `${BASE_URL}/products`
-        : `${BASE_URL}/products/category/${category}`;
+      category === "all" ? `/products` : `/products/category/${category}`;
 
-    const response = await fetch(url);
+    const response = await axios.get(url);
 
-    if (!response.ok) {
-      throw new Error(`Error fetching products: ${response.status}`);
+    if (!response.data) {
+      throw new Error("Empty response from server");
     }
 
-    const data = await response.json();
-    return data;
+    return response.data;
   } catch (error) {
-    console.error(error);
+    const axiosError = error as AxiosError;
+    console.error(
+      "[getProductsByCategory] Error fetching products:",
+      axiosError.response?.data
+    );
     throw error;
   }
 };
