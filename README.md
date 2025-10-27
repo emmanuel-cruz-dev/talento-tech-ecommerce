@@ -19,6 +19,7 @@ Se integró el consumo de una API externa utilizando **Axios** y **TanStack Quer
 ## 🧰 Tecnologías utilizadas
 
 * **React**: Framework de JavaScript para construir interfaces de usuario.
+* **TypeScript**: Superset de JavaScript que agrega tipado estático y mejora la mantenibilidad del código.
 * **Bootstrap**: Framework de CSS para construir interfaces de usuario.
 * **React Router**: Gestión de rutas y navegación.
 * **React Hooks**: Utilidades para crear componentes reutilizables.
